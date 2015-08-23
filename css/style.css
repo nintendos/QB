@@ -1,0 +1,11 @@
+/*
+ * QB CSS
+ * Copyright 2015 Sumscope.
+ */
+body{background: #111;color:#ffebc8}
+.panel{background: #222;border-color:#333}
+.nav-pills > li > a{border-radius: 0;}
+.nav-pills > li > a:hover{background: none;color:#49A2EF}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
+
+header{background: #222;height: 40px;margin-bottom:10px }
