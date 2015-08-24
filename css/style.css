@@ -8,4 +8,9 @@ body{background: #111;color:#ffebc8}
 .nav-pills > li > a:hover{background: none;color:#49A2EF}
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
 
-header{background: #222;height: 40px;margin-bottom:10px }
+header{background: #222;height: 50px;margin-bottom:10px }
+header .logo li a, header .mainNav > li > a{padding: 15px}
+header .navbar-right{margin-right: 0}
+.avatar{width:30px;height:30px;border-radius: 50%}
+.notifications-menu.close{opacity: 1;font-size: 12px}
+.notifications-menu .dropdown-toggle i{font-size: 18px; color:#ffebc8;top:10px;}
