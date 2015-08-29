@@ -7,6 +7,9 @@ body{background-image:linear-gradient(135deg, #0e2424, #1a6f8d);color:#ffebc8}
 .nav-pills > li > a{border-radius: 0;}
 .nav-pills > li > a:hover{background: none;color:#49A2EF}
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
+.form-control{background: #3C6666;border-radius: 2px;border-color:transparent;}
+.searchNav{margin-top:8px;width: 300px}
+
 
 header{background: #0e2424;height: 50px;margin-bottom:10px }
 header .logo li a, header .mainNav > li > a{padding: 15px}
