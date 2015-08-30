@@ -2,18 +2,35 @@
  * QB CSS
  * Copyright 2015 Sumscope.
  */
-body{background-image:linear-gradient(135deg, #0e2424, #1a6f8d);color:#ffebc8}
-.panel{background: #0e2424;border-color:#333}
-.nav-pills > li > a{border-radius: 0;}
-.nav-pills > li > a:hover{background: none;color:#49A2EF}
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
-.form-control{background: #3C6666;border-radius: 2px;border-color:transparent;}
-.searchNav{margin-top:8px;width: 300px}
+body{background-image:linear-gradient(135deg, #434351, #323241);color:#A1A9C0}
+a:link, a:visited{color:#A1A9C0;}
+a:hover, a:active{color:#fff;}
 
+/*Bootstrap Hack*/
+.panel{background: #323241;border-color:#252534}
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
+.nav > li > a:focus, .nav > li > a:hover{background: none}
+.form-control{background: #393947;border-radius: 2px;border-color:transparent;}
+.close{font-size: inherit;font-weight: inherit; line-height: inherit;text-shadow:none; opacity: 1}
+.dropdown-menu li a{color:#AAACBC}
+.dropdown-menu .divider{background: #474D5D}
 
-header{background: #0e2424;height: 50px;margin-bottom:10px }
-header .logo li a, header .mainNav > li > a{padding: 15px}
+/*Header*/
+header{background: #292a37;border-bottom:1px solid #18181E;height: 50px;margin-bottom:10px;position: relative;z-index: 999}
+header .logo li a, header .mainNav > li > a{padding: 15px;font-size: 14px}
 header .navbar-right{margin-right: 0}
+header .nav-pills > li > a{border-radius: 0;}
+header .nav-pills > li > a:hover{background: none;color:#49A2EF}
+header .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
+.mainNav .dropdown-menu{height: 200px;background: #393A4B;border-radius: 0}
+.mainNav .dropdown-menu ul{width:200px;float:left;}
+
+.searchNav{margin-top:8px;width: 300px}
 .avatar{width:30px;height:30px;border-radius: 50%}
 .notifications-menu.close{opacity: 1;font-size: 12px}
 .notifications-menu .dropdown-toggle i{font-size: 18px; color:#ffebc8;top:10px;}
+
+/*Function List*/
+.funcIcon{background: #00B48E;border-radius: 100%;width: 40px;height: 40px;overflow: hidden;transition: transform 0.1s ease-in-out;}
+.funcTrans{transform:scale(1.1,1.1);}
+.bgPurple{background: #CC40BB}

@@ -46,7 +46,22 @@ $(function() {
 	resizeCanvas();
 	$(window).resize(function(){resizeCanvas();});
 
+	//Main Nav Dropdown
+	// alert($(".mainNav").offset().left);
+	$(".mainNav .dropdown-menu").css({
+		"width":$(window).width()-$(".mainNav").offset().left,
+		"left":-$(".mainNav").offset().left
+	});
 
+	//Function List Transition
+	$(".funcIcon").hover(
+		function(){
+			$(this).addClass("funcTrans")
+		},
+		function(){
+			$(this).removeClass("funcTrans")
+		}
+		);
 
 /////
 })
