@@ -2,7 +2,7 @@
  * QB CSS
  * Copyright 2015 Sumscope.
  */
-body{background-image:linear-gradient(135deg, #434351, #323241);color:#A1A9C0}
+body{background-image:linear-gradient(135deg, #434351, #323241);color:#A1A9C0;-webkit-user-select:none;-webkit-app-region:drag;}
 a:link, a:visited{color:#A1A9C0;}
 a:hover, a:active{color:#fff;}
 
