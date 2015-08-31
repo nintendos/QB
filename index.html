@@ -46,8 +46,10 @@
   <li role="presentation" class="dropdown close"><a href="#">资讯与数据</a></li>
   <li role="presentation" class="dropdown close"><a href="#">分析工具</a></li>
 </ul>	
-<ul class="nav nav-pills navbar-right">
-<li class="dropdown notifications-menu close">
+<ul class="nav nav-pills navbar-right secondNav">
+  <li role="presentation" class="weather"><a href="#">天气</a></li>
+  <li role="presentation" class="appCenter"><a href="#"><i class="glyphicon glyphicon-th-large"></i></a></li>
+<li class="dropdown close notiMenu">
       <a aria-expanded="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="glyphicon glyphicon-volume-up"></i>
         <span class="label label-warning">10</span>
@@ -122,11 +124,54 @@
 </div>
 <div class="row">
   <div class="col-xs-12 col-sm-8">
-    <div id="timesheet"></div>
-
+      <div class="panel panel-default">
+          <div class="panel-body">
+          <h2 class="panel-title">今日头寸</h2>
+              <table class="table table-hover">
+                <tr>
+                  <th>xxxxx</th>
+                  <th>xxxxx</th>
+                  <th>xxxxx</th>
+                </tr>
+                <tr>
+                  <td>xxxxx</td>
+                  <td>xxxxx</td>
+                  <td>xxxxx</td>
+                </tr>
+                <tr>
+                  <td>xxxxx</td>
+                  <td>xxxxx</td>
+                  <td>xxxxx</td>
+                </tr>
+                <tr>
+                  <td>xxxxx</td>
+                  <td>xxxxx</td>
+                  <td>xxxxx</td>
+                </tr>
+              </table>          
+        </div>
+      </div>
   </div>
   <div class="clearfix visible-xs-block"></div>
-  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  <div class="col-xs-6 col-sm-4">
+      <div class="panel panel-default">
+          <div class="panel-body">
+            <h2 class="panel-title">备忘录与日历</h2>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="badge">14</span>
+                Cras justo odio
+              </li>
+              <li class="list-group-item">
+                <span class="badge">14</span>
+                Cras justo odio
+              </li>
+            </ul>            
+
+        </div>
+      </div>
+
+    </div>
 </div>
 
 </div>
@@ -141,15 +186,6 @@
 $(function() {
 $(".draggable").draggable();
 });
-
-// new Timesheet('timesheet', 2015, 2015, [
-//   ['06/2015', '09/2015', 'Some great memories', 'ipsum'],
-//   ['2015', 'Had very bad luck'],
-//   ['10/2015', '2015', 'For a long time nothing happened', 'dolor'],
-//   ['01/2015', '05/2015', 'LOST Season #4', 'lorem'],
-//   ['02/2015', '05/2015', 'LOST Season #5', 'lorem'],
-//   ['09/2015', '06/2015', 'FRINGE #1 & #2', 'ipsum']
-// ]);  
 
 </script>
 </body>

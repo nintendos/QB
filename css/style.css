@@ -2,18 +2,21 @@
  * QB CSS
  * Copyright 2015 Sumscope.
  */
-body{background-image:linear-gradient(135deg, #434351, #323241);color:#A1A9C0;/*-webkit-user-select:none;-webkit-app-region:drag;*/}
+body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#171821;color:#A1A9C0;/*-webkit-user-select:none;-webkit-app-region:drag;*/}
 a:link, a:visited{color:#A1A9C0;}
 a:hover, a:active{color:#fff;}
 
 /*Bootstrap Hack*/
-.panel{background: #323241;border-color:#252534}
+.panel{background: #23232F;border:0}
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
 .nav > li > a:focus, .nav > li > a:hover{background: none}
 .form-control{background: #393947;border-radius: 2px;border-color:transparent;}
 .close{font-size: inherit;font-weight: inherit; line-height: inherit;text-shadow:none; opacity: 1}
 .dropdown-menu li a{color:#AAACBC}
 .dropdown-menu .divider{background: #474D5D}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
+.table-hover > tbody > tr:hover {background-color: #46465A;}
+.list-group-item {background: none;border:none}
 
 /*Header*/
 header{background: #292a37;border-bottom:1px solid #18181E;height: 50px;margin-bottom:10px;position: relative;z-index: 999}
@@ -22,13 +25,16 @@ header .navbar-right{margin-right: 0}
 header .nav-pills > li > a{border-radius: 0;}
 header .nav-pills > li > a:hover{background: none;color:#49A2EF}
 header .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
-.mainNav .dropdown-menu{height: 200px;background: #393A4B;border-radius: 0}
+.mainNav .dropdown-menu{height: 200px;background: #292935;border-radius: 0}
 .mainNav .dropdown-menu ul{width:200px;float:left;}
+.secondNav li a{height:50px;padding:0 15px;line-height: 50px}
+.secondNav li i{line-height: 50px}
 
 .searchNav{margin-top:8px;width: 300px}
 .avatar{width:30px;height:30px;border-radius: 50%}
-.notifications-menu.close{opacity: 1;font-size: 12px}
-.notifications-menu .dropdown-toggle i{font-size: 18px; color:#ffebc8;top:10px;}
+.notiMenu.close{opacity: 1;font-size: 12px}
+.notiMenu .dropdown-toggle i{font-size: 18px; color:#ffebc8;}
+.notiMenu .label{background: #CF5609;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
 
 /*Function List*/
 .funcIcon{background: #00B48E;border-radius: 100%;width: 40px;height: 40px;overflow: hidden;transition: transform 0.1s ease-in-out;}
