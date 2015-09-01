@@ -65,16 +65,16 @@ $(function() {
 
 
 $.ajax({
-	url: "http://apis.baidu.com/heweather/weather/free?city=beijing",
-	data: {},
-	dataType :'json',
+	url: "http://apis.baidu.com/heweather/weather/free?city=shanghai",
 	type: "GET",
 	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
 	success: function(data) {
-		 $.each(data, function() {
-		 	alert(data[1].status);
-			$('#feed-list').html(data.status);
-		  });		
+		 // $.each(data, function() {
+		 	// str=JSON.stringify(data);
+		 	// alert(typeof(data["HeWeather data service 3.0"][0].daily_forecast));
+		 	weather=JSON.stringify(data["HeWeather data service 3.0"][0].now);//Key中包含非法字符时反序列化的另一种形式
+			$('#feed-list').html(weather);
+		  // });		
 	}
 });
 
