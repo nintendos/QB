@@ -63,10 +63,49 @@ $(function() {
 		}
 		);
 
-/////
+
+$.ajax({
+	url: "http://apis.baidu.com/heweather/weather/free?city=beijing",
+	data: {},
+	dataType :'json',
+	type: "GET",
+	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
+	success: function(data) {
+		 $.each(data, function() {
+		 	alert(data[1].status);
+			$('#feed-list').html(data.status);
+		  });		
+	}
+});
+
 })
 
 ////////////
-function showSideBar(){
-	$("#sideBar").toggleClass("show");
-}
+// function showSideBar(){
+// 	$("#sideBar").toggleClass("show");
+// }
+
+// request('http://www.ibm.com/developerworks/cn/views/global/rss/libraryview.jsp', {
+//     handleAs: 'xml'
+// }).then(function(data){
+//     var items = data.getElementsByTagName('item');
+
+//     for (var i = 0; i < items.length; i++) {
+//         var item = items[i];
+//         var children = item.children;
+//         var title = children[0].textContent;
+//         var description = children[1].textContent;
+//         var link = children[2].textContent;
+//         var pubdate = new Date(Date.parse(children[3].textContent));
+//         var feed = domConstruct.toDom([
+//             '<div class="feed">',
+//                 '<h4><a href="', link, '" target="_blank">', title, '</a></h4>',
+//                 '<p>内容概要： ', description, '</p>',
+//                 '<div>发布时间： ', locale.format(pubdate), '</div>',
+//             '</div>'
+//         ].join(''));
+
+//         dom.byId('feed-list').appendChild(feed);
+//     }
+// });
+
