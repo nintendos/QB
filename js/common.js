@@ -69,12 +69,36 @@ $.ajax({
 	type: "GET",
 	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
 	success: function(data) {
-		 // $.each(data, function() {
-		 	// str=JSON.stringify(data);
-		 	// alert(typeof(data["HeWeather data service 3.0"][0].daily_forecast));
-		 	weather=JSON.stringify(data["HeWeather data service 3.0"][0].now);//Key中包含非法字符时反序列化的另一种形式
-			$('#feed-list').html(weather);
-		  // });		
+			var p = data["HeWeather data service 3.0"][0];// w = JSON.stringify(p);//Key中包含非法字符时反序列化的另一种形式   " + p.now.cond.code + "
+			var m = [
+				{"name":"&#xe629;","value":100},
+				{"name":"&#xe62a;","value":101},
+				{"name":"&#xe632;","value":305},
+				{"name":"&#xe644;","value":502},
+				{"name":"&#xe62c;","value":300},
+				{"name":"&#xe62b;","value":104},
+				{"name":"&#xe62d;","value":302},
+				{"name":"&#xe636;","value":400},
+				{"name":"&#xe635;","value":407},
+				{"name":"&#xe641;","value":501},
+				{"name":"&#xe631;","value":404},
+				{"name":"&#xe62f;","value":403},
+				{"name":"&#xe633;","value":310},
+				{"name":"&#xe63a;","value":306},
+				{"name":"&#xe637;","value":402},
+				{"name":"&#xe630;","value":307},
+				{"name":"&#xe63b;","value":401},
+				{"name":"&#xe634;","value":311},
+				{"name":"&#xe63c;","value":312},
+			];
+			$.each(m, function(index,item){
+				if(item.value == p.now.cond.code){
+					n = item.name;
+					return false;
+				}
+			});
+			$('#weather').html("<div class='weatherIcon'><i class='iconfont'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
+
 	}
 });
 
