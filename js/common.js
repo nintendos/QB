@@ -63,12 +63,13 @@ $(function() {
 		}
 		);
 
-
+//天气
 $.ajax({
 	url: "http://apis.baidu.com/heweather/weather/free?city=shanghai",
 	type: "GET",
 	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
 	success: function(data) {
+		alert("sdfsd");
 			var p = data["HeWeather data service 3.0"][0];// w = JSON.stringify(p);//Key中包含非法字符时反序列化的另一种形式   " + p.now.cond.code + "
 			var m = [
 				{"name":"&#xe629;","value":100},
@@ -97,7 +98,7 @@ $.ajax({
 					return false;
 				}
 			});
-			$('#weather').html("<div class='weatherIcon'><i class='iconfont'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
+			$('#weather').html("<div class='weatherIcon'><i class='glyphicon'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
 
 	}
 });
