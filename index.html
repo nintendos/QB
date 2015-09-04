@@ -81,8 +81,19 @@
   <li role="presentation"><a href="#"><img src="img/avatar.png" class="avatar" alt=""></a></li>
 </ul> 
 </header>
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-8">
+<div class="row tabBar">
+    <div class="col-xs-18 col-sm-8 col-md-12">
+       <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#">我的主页</a></li>
+        <li role="presentation"><a href="#">经纪商现券</a></li>
+        <li role="presentation"><a href="#">超级新债通<span class="badge">3</span></a></li>
+      </ul>     
+    </div>
+</div>
+<div class="row mainContent">
+  <!--Left Content-->
+  <div class="col-xs-12 col-sm-6 col-md-8 leftColumn">
+
 	<div class="panel panel-default draggable">
 	  <div class="panel-body">
 
@@ -99,57 +110,109 @@
             </g>
           </svg>     
         </div>
-        <div>我的关注</div>
+        <h3>我的关注</h3>
+      </li>
+        <li>
+        <div class="funcIcon bgYellow">
+          <svg width="40" height="40" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(10 10) scale(0.6)">
+              <rect x="13.5" y="24.305" fill="#fff" width="9" height="23.695"/>
+              <rect x="3.543" y="3.333" fill="#fff" width="3.336" height="53.667"/>
+              <rect x="4.336" y="53.664" fill="#fff" width="62" height="3.336"/>
+              <rect x="28.5" y="21.145" fill="#fff" width="9" height="26.855"/>
+              <rect x="43.5" y="11.667" fill="#fff" width="9" height="36.333"/>
+            </g>
+          </svg>     
+        </div>
+        <h3>债券价格试算</h3>
+      </li>
+        <li>
+        <div class="funcIcon bgRed">
+          <svg width="40" height="40" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(10 10) scale(0.6)">
+              <rect x="13.5" y="24.305" fill="#fff" width="9" height="23.695"/>
+              <rect x="3.543" y="3.333" fill="#fff" width="3.336" height="53.667"/>
+              <rect x="4.336" y="53.664" fill="#fff" width="62" height="3.336"/>
+              <rect x="28.5" y="21.145" fill="#fff" width="9" height="26.855"/>
+              <rect x="43.5" y="11.667" fill="#fff" width="9" height="36.333"/>
+            </g>
+          </svg>     
+        </div>
+        <h3>经纪商现券</h3>
       </li>
       </ul>
 
-
+      </div>
 	  </div>
-	</div>
-  </div>
-  <div class="col-xs-6 col-md-4">
-	<div class="panel panel-default">
-	  <div class="panel-body">
-          <div id="weather"></div>
-          <div>风险来自你不知道自己正在做什么!</div>
-
-	  </div>
-	</div>
-
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-sm-8">
+  <!---->
       <div class="panel panel-default">
           <div class="panel-body">
           <h2 class="panel-title">今日头寸</h2>
               <table class="table table-hover">
                 <tr>
-                  <th>xxxxx</th>
-                  <th>xxxxx</th>
-                  <th>xxxxx</th>
+                  <th>方向</th>
+                  <th>资产</th>
+                  <th>期限</th>
+                  <th>数量</th>
+                  <th>价格</th>
+                  <th>备注</th>
+                  <th>更新时间</th>
                 </tr>
                 <tr>
-                  <td>xxxxx</td>
-                  <td>xxxxx</td>
-                  <td>xxxxx</td>
+                  <td><span class="label labelOfr">出</span></td>
+                  <td>线上</td>
+                  <td>7天</td>
+                  <td>1亿</td>
+                  <td>加权</td>
+                  <td></td>
+                  <td>10:37:56</td>
                 </tr>
                 <tr>
-                  <td>xxxxx</td>
-                  <td>xxxxx</td>
-                  <td>xxxxx</td>
+                  <td><span class="label labelBid">收</span></td>
+                  <td>线上</td>
+                  <td>1天</td>
+                  <td>2亿</td>
+                  <td>--</td>
+                  <td>押信用</td>
+                  <td>10:20:09</td>
                 </tr>
                 <tr>
-                  <td>xxxxx</td>
-                  <td>xxxxx</td>
-                  <td>xxxxx</td>
+                  <td><span class="label labelBid">收</span></td>
+                  <td>线上</td>
+                  <td>14天</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>10:15:23</td>
+                </tr>
+                <tr>
+                  <td><span class="label labelOfr">出</span></td>
+                  <td>线上</td>
+                  <td>7天</td>
+                  <td>8000万</td>
+                  <td>加权</td>
+                  <td>限直连，押AAA</td>
+                  <td>09:56:56</td>
                 </tr>
               </table>          
         </div>
       </div>
+
+<!---->
   </div>
-  <div class="clearfix visible-xs-block"></div>
-  <div class="col-xs-6 col-sm-4">
+  <!--Left Content End-->
+
+  <!--Right Side Column-->
+  <div class="col-xs-6 col-sm-2 col-md-4 rightColumn">
+  <!---->
+      <div class="panel panel-default">
+        <div class="panel-body">
+              <div id="weather"></div>
+              <div>风险来自你不知道自己正在做什么!</div>
+
+        </div>
+      </div>
+  <!---->
       <div class="panel panel-default">
           <div class="panel-body">
             <h2 class="panel-title">备忘录与日历</h2>
@@ -165,22 +228,14 @@
             </ul>
                         
           <div class="ad">
-            <img src="http://img.hb.aicdn.com/71fe06d35b7fc6729467cb72f3b1fd63ee91cfdfbaf8c-D46g6t_fw658" height="100" alt="">
+            <img src="img/ad01.png" height="60" alt="">
           </div>
         </div>
       </div>
 
-    </div>
-</div>
+<!--QM-->
 
-
-<div class="row">
-  <div class="col-xs-12 col-sm-8">
-xxxxxxx
-  </div>
-  <div class="clearfix visible-xs-block"></div>
-  <div class="col-xs-6 col-sm-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default qeuMessenger">
           <div class="panel-body">
             <h2 class="panel-title">快讯RSS</h2>
 
@@ -248,17 +303,16 @@ xxxxxxx
                 </div><!-- /.box-footer-->
               </div>
 
-
-
-
-
         </div>
       </div>
 
-    </div>
+<!--QM End-->
+
+  </div>
+  <!--Right Side Column End-->
+
+
 </div>
-
-
 
 </div>
 
@@ -266,7 +320,6 @@ xxxxxxx
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common.js"></script>
-<script src="js/timesheet.min.js"></script>
 
 <script>
 $(function() {

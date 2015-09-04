@@ -5,21 +5,31 @@
 body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#171821;color:#ddd;/*-webkit-user-select:none;-webkit-app-region:drag;*/}
 a:link, a:visited{color:#A1A9C0;}
 a:hover, a:active{color:#fff;}
+ul{padding: 0}
 
 /*Bootstrap Hack*/
 .panel{background: #23232F;border:0}
+.panel-title{margin-bottom: 10px;color:#309EC2;}
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
 .nav > li > a:focus, .nav > li > a:hover{background: none}
+.nav-pills > li + li{margin:0;}
 .form-control{background: #393947;border-radius: 2px;border-color:transparent;}
 .close{font-size: inherit;font-weight: inherit; line-height: inherit;text-shadow:none; opacity: 1}
 .dropdown-menu li a{color:#AAACBC}
 .dropdown-menu .divider{background: #474D5D}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
+th{font-size: 12px;font-weight: 400;color: #999}
 .table-hover > tbody > tr:hover {background-color: #46465A;}
 .list-group-item {background: none;border:none}
 
+/*Tag*/
+.label{border-radius: 0.85em;font-weight: 400}
+.labelBid{background: #AB8500}
+.labelOfr{background: #0099AB}
+
+ 
 /*Header*/
-header{background: #292a37;border-bottom:1px solid #18181E;height: 50px;margin-bottom:10px;position: relative;z-index: 999}
+header{background: #292a37;border-bottom:1px solid #18181E;height: 50px;position: relative;z-index: 999}
 header .logo li a, header .mainNav > li > a{padding: 15px;font-size: 14px}
 header .navbar-right{margin-right: 0}
 header .nav-pills > li > a{border-radius: 0;}
@@ -36,10 +46,24 @@ header .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills 
 .notiMenu .dropdown-toggle i{font-size: 18px; color:#ffebc8;}
 .notiMenu .label{background: #CF5609;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
 
+/*Tab Bar*/
+.tabBar .nav > li{width: 130px;text-align: center;}
+.tabBar .nav > li > a{padding: 0.5em 0.75em}
+.tabBar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
+
+/*Left Column*/
+.leftColumn{padding-right: 10px}
+
+
 /*Function List*/
+.funcList li{float: left;margin:10px;width: 200px;height:40px;list-style: none}
+.funcList li h3{float:left;margin:0 0 0 10px;font-size: 14px;line-height: 40px}
 .funcIcon{background: #00B48E;float:left;border-radius: 100%;width: 40px;height: 40px;overflow: hidden;transition: transform 0.1s ease-in-out;}
 .funcTrans{transform:scale(1.1,1.1);}
 .bgPurple{background: #CC40BB}
+.bgRed{background: #CB145B}
+.bgGreen{background: #3FB040}
+.bgYellow{background: #DAA900}
 
 
 /*Weather*/

@@ -69,7 +69,7 @@ $.ajax({
 	type: "GET",
 	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
 	success: function(data) {
-		alert("sdfsd");
+		alert(data);
 			var p = data["HeWeather data service 3.0"][0];// w = JSON.stringify(p);//Key中包含非法字符时反序列化的另一种形式   " + p.now.cond.code + "
 			var m = [
 				{"name":"&#xe629;","value":100},
