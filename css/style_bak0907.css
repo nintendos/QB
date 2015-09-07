@@ -3,19 +3,18 @@
  * Copyright 2015 Sumscope.
  */
 
-body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#111;color:#ffebc8;-webkit-user-select:none;}
-a:link, a:visited{color:#ffebc8;}
+body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#1c1d21;color:#ddd;/*-webkit-user-select:none;-webkit-app-region:drag;*/}
+a:link, a:visited{color:#A1A9C0;}
 a:hover, a:active{color:#fff;}
 ul{padding: 0}
 
 /*Bootstrap Hack*/
-.panel{background: #111716;border:0}
+.panel{background: #212529;border:0}
 .panel-title{margin-bottom: 10px;color:#309EC2;}
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
 .nav > li > a:focus, .nav > li > a:hover{background: none}
 .nav-pills > li + li{margin:0;}
 .nav-pills > li > a > .badge {position: absolute;}
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{background: #ff900d;color:#000;}
 .badge{padding: 1px 3px;font-size: 11px;font-weight: 400;border-radius: 3px;}
 
 .form-control{background: #393947;border-radius: 2px;border-color:transparent;}
@@ -34,13 +33,12 @@ th{font-size: 12px;font-weight: 400;color: #999}
 
  
 /*Header*/
-header{background: #0e2424;height: 50px;position: relative;z-index: 999;-webkit-app-region:drag;}
+header{background: #292a37;border-bottom:1px solid #18181E;height: 50px;position: relative;z-index: 999}
 header .logo li a, header .mainNav > li > a{padding: 15px;font-size: 14px}
 header .navbar-right{margin-right: 0}
 header .nav-pills > li > a{border-radius: 0;}
-header .nav-pills > li > a:hover{background: none;color:#fff}
-header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header .nav-pills > li.active > a:hover {color: #A9D7FF;font-weight: 700}
-.mainNav{-webkit-app-region:no-drag;}
+header .nav-pills > li > a:hover{background: none;color:#49A2EF}
+header .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {background: none;color: #A9D7FF;font-weight: 700}
 .mainNav .dropdown-menu{height: 200px;background: #292935;border-radius: 0}
 .mainNav .dropdown-menu ul{width:200px;float:left;}
 .secondNav li a{height:50px;padding:0 15px;line-height: 50px}
@@ -53,7 +51,6 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .notiMenu .label{background: #E10057;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
 
 /*Tab Bar*/
-.tabBar{background: #0e2424;}
 .tabBar .nav > li{width: 130px;text-align: center;}
 .tabBar .nav > li > a{padding: 0.3em 0.75em}
 .tabBar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
