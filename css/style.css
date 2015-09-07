@@ -6,7 +6,7 @@
 body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#111;color:#ffebc8;-webkit-user-select:none;}
 a:link, a:visited{color:#ffebc8;}
 a:hover, a:active{color:#fff;}
-ul{padding: 0}
+ul{padding: 0;list-style: none}
 
 /*Bootstrap Hack*/
 .panel{background: #111716;border:0}
@@ -19,9 +19,10 @@ ul{padding: 0}
 .badge{padding: 1px 3px;font-size: 11px;font-weight: 400;border-radius: 3px;}
 
 .form-control{background: #393947;border-radius: 2px;border-color:transparent;}
-.close{font-size: inherit;font-weight: inherit; line-height: inherit;text-shadow:none; opacity: 1}
-.dropdown-menu li a{color:#AAACBC}
-.dropdown-menu .divider{background: #474D5D}
+.close,.close:hover, .close:focus{font-size: inherit;font-weight: inherit; line-height: inherit;text-shadow:none; opacity: 1;color: #ffebc8}
+.dropdown-menu{background: #164141;border-radius: 0;}
+.dropdown-menu .divider{background: #335652}
+.dropdown-menu > li > a,.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{color: #ffebc8;background: none}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
 th{font-size: 12px;font-weight: 400;color: #999}
 .table-hover > tbody > tr:hover {background-color: #46465A;}
@@ -37,14 +38,14 @@ th{font-size: 12px;font-weight: 400;color: #999}
 header{background: #0e2424;height: 50px;position: relative;z-index: 999;-webkit-app-region:drag;}
 header .logo li a, header .mainNav > li > a{padding: 15px;font-size: 14px}
 header .navbar-right{margin-right: 0}
-header .nav-pills > li > a{border-radius: 0;}
+header .nav-pills > li > a{border-radius: 0;font-size: 12px}
 header .nav-pills > li > a:hover{background: none;color:#fff}
 header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header .nav-pills > li.active > a:hover {color: #A9D7FF;font-weight: 700}
 .mainNav{-webkit-app-region:no-drag;}
-.mainNav .dropdown-menu{height: 200px;background: #292935;border-radius: 0}
-.mainNav .dropdown-menu ul{width:200px;float:left;}
-.secondNav li a{height:50px;padding:0 15px;line-height: 50px}
-.secondNav li i{line-height: 50px}
+.mainNav .dropdown-menu{height: 200px;}
+.mainNav .dropdown-menu ul{width:200px;float:left;margin:20px;}
+.secondNav > li > a{height:50px;padding:0 15px;line-height: 50px}
+.secondNav > li > i{line-height: 50px}
 
 .searchNav{margin-top:8px;width: 300px}
 .avatar{width:30px;height:30px;border-radius: 50%}
@@ -53,7 +54,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .notiMenu .label{background: #E10057;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
 
 /*Tab Bar*/
-.tabBar{background: #0e2424;}
+.tabBar{background: #0e2424;border-bottom: 2px solid #FF900D}
 .tabBar .nav > li{width: 130px;text-align: center;}
 .tabBar .nav > li > a{padding: 0.3em 0.75em}
 .tabBar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
@@ -76,5 +77,5 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 
 
 /*Weather*/
-.weatherIcon{float: left;}
+.weatherIcon{float: left;font-size: 32px}
 .weatherTmp{font-size: 24px;float: left;margin:5px 0 0 5px;}
