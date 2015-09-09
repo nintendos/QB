@@ -1,17 +1,5 @@
 {
   "name": "Quoteboard",
   "version": "0.0.1",
-  "main": "main.js",
-  "window":{
-    "title": "Quoteboard",
-    "icon": "img/avatar.png",
-    "toolbar": false,
-    "frame": false,
-    "width": 800,
-    "height": 600,
-    "position": "mouse",
-    "min_width": 400,
-    "min_height": 200
-  }
+  "main": "main.js"
 }
-//http://42.120.0.203:8081/

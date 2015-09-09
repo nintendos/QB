@@ -58,8 +58,10 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .mainNav{-webkit-app-region:no-drag;}
 .mainNav .dropdown-menu{height: 200px;}
 .mainNav .dropdown-menu ul{width:200px;float:left;margin:20px;}
+.secondNav{-webkit-app-region:no-drag;}
 .secondNav > li > a{height:50px;padding:0 15px;line-height: 50px}
 .secondNav > li > i{line-height: 50px}
+.windowControl{-webkit-app-region:no-drag;}
 .windowControl > li > a{padding: 0 5px;color:#C2C0A0;}
 .windowControl > li > a > i{font-size: 13px}
 
@@ -133,5 +135,6 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 
 
 /*Weather*/
-.weatherIcon{float: left;font-size: 32px}
+.weatherIcon{float: left;}
+.weatherIcon i{font-size: 32px}
 .weatherTmp{font-size: 24px;float: left;margin:5px 0 0 5px;}

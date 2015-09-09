@@ -97,7 +97,7 @@ $.ajax({
 					return false;
 				}
 			});
-			$('#weather').html("<div class='weatherIcon'><i class='glyphicon'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
+			$('#weather').html("<div class='weatherIcon'><i class='iconfont'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
 
 	}
 });
