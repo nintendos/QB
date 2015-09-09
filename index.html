@@ -5,7 +5,7 @@
 <title>UXtest</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/iconfont.css">
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_1441693835_3352718.css">
 <link rel="stylesheet" href="css/chart.css">
 <script src="js/chart.js"></script>
 </head>
@@ -47,11 +47,16 @@
   <li role="presentation" class="dropdown close"><a href="#">资讯与数据</a></li>
   <li role="presentation" class="dropdown close"><a href="#">分析工具</a></li>
 </ul>	
+<ul class="nav nav-pills navbar-right windowControl">
+  <li role="presentation"><a href="#"><i class="iconfont icon-anonymous-iconfont"></i></a></li>
+  <li role="presentation"><a href="#"><i class="iconfont icon-icon31"></i></a></li>
+  <li role="presentation"><a href="#"><i class="iconfont icon-guanbi"></i></a></li>
+</ul>
 <ul class="nav nav-pills navbar-right secondNav">
-  <li role="presentation" class="appCenter"><a href="#"><i class="glyphicon icon-t06"></i></a></li>
+  <li role="presentation" class="appCenter"><a href="#"><i class="iconfont icon-yingyong"></i></a></li>
   <li class="dropdown close notiMenu">
       <a aria-expanded="true" href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="glyphicon icon-t06"></i>
+        <i class="iconfont icon-tongzhi"></i>
         <span class="label label-warning">10</span>
       </a>
       <ul class="dropdown-menu">
@@ -61,17 +66,17 @@
           <div style="position: relative; overflow: hidden; width: auto; height: 200px;" class="slimScrollDiv"><ul style="overflow: hidden; width: 100%; height: 200px;" class="menu">
             <li>
               <a href="#">
-                <i class="glyphicon icon-t06 text-aqua"></i>5 条聊天讯息
+                <i class="iconfont icon-t06 text-aqua"></i>5 条聊天讯息
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="glyphicon icon-t06 text-green"></i> 25 条报价提醒
+                <i class="iconfont icon-t06 text-green"></i> 25 条报价提醒
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="glyphicon icon-t06 text-red"></i>新活动：冬日开心乐园
+                <i class="iconfont icon-t06 text-red"></i>新活动：冬日开心乐园
               </a>
             </li>
           </ul><div style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 195.122px;" class="slimScrollBar"></div><div style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;" class="slimScrollRail"></div></div>
@@ -82,12 +87,13 @@
   <li role="presentation"><a href="#"><img src="img/avatar.png" class="avatar" alt=""></a></li>
 </ul> 
 </header>
+<!---->
 <div class="row tabBar">
     <div class="col-xs-18 col-sm-8 col-md-12">
        <ul class="nav nav-pills" role="tablist">
-        <li role="presentation" class="active"><a href="#">我的主页</a></li>
-        <li role="presentation"><a href="#">经纪商现券</a></li>
-        <li role="presentation"><a href="#">超级新债通<span class="badge">3</span></a></li>
+        <li role="presentation" class="active" style="position:relative;z-index:3"><a href="#">我的主页</a></li>
+        <li role="presentation" style="position:relative;z-index:2"><a href="#">经纪商现券</a></li>
+        <li role="presentation" style="position:relative;z-index:1"><a href="#">超级新债通<span class="badge">3</span></a></li>
       </ul>     
     </div>
 </div>
@@ -150,8 +156,8 @@
 	  </div>
   <!---->
       <div class="panel panel-default">
-          <div class="panel-body">
           <h2 class="panel-title">今日头寸</h2>
+          <div class="panel-body">
               <table class="table table-hover">
                 <tr>
                   <th>方向</th>
@@ -204,8 +210,8 @@
 
   <!--Chart-->
     <div class="panel panel-default">
-        <div class="panel-body">
           <h2 class="panel-title">我的持仓</h2>
+        <div class="panel-body">
 
       <div>
         <canvas id="canvas" height="200" width="500"></canvas>
@@ -350,8 +356,8 @@
   </div>
   <!---->
       <div class="panel panel-default">
-          <div class="panel-body">
             <h2 class="panel-title">备忘录与日历</h2>
+          <div class="panel-body">
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="badge">14</span>
@@ -369,8 +375,8 @@
 <!--QM-->
 
       <div class="panel panel-default qeuMessenger">
-          <div class="panel-body">
             <h2 class="panel-title">快讯RSS</h2>
+          <div class="panel-body">
 
             <div class="box box-primary direct-chat direct-chat-primary">
                 <div class="box-header with-border">
