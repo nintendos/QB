@@ -1,5 +1,9 @@
 {
-  "name": "Quoteboard",
-  "version": "0.0.1",
-  "main": "main.js"
+	"name": "Quoteboard",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "^4.13.3",
+		"ejs": ">= 0.0.1"
+	}
 }

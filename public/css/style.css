@@ -1,0 +1,140 @@
+/*
+ * QB CSS
+ * Copyright 2015 Sumscope.
+ */
+
+body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#111;color:#ffebc8;-webkit-user-select:none;}
+a:link, a:visited{color:#ffebc8;}
+a:hover, a:active{color:#fff;}
+ul{padding: 0;list-style: none}
+
+/*.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'iconfont';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+*/
+
+/*Bootstrap Hack*/
+.panel{background: #111716;border:0}
+.panel-title{margin-bottom: 10px;padding-left:10px;color:#ffebc8;background: #0e2424;font-size: 14px;line-height: 28px;border-radius: 3px 3px 0 0}
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
+.nav > li > a:focus, .nav > li > a:hover{background: none}
+.nav-pills > li + li{margin:0;}
+.nav-pills > li > a > .badge {position: absolute;}
+.badge{padding: 1px 3px;font-size: 11px;font-weight: 400;border-radius: 3px;}
+
+.form-control{background: #6e6c4b;color:#000;box-shadow: inset 0 2px 3px #000;border-radius: 2px;border:0}
+.btn-primary {color: #000;border-radius: 2px;background-color: #5cbfb3;border-color: transparent;}
+.close,.close:hover, .close:focus{font-size: inherit;font-weight: inherit; line-height: inherit;text-shadow:none; opacity: 1;color: #ffebc8}
+.dropdown-menu{background: #164141;border-radius: 0;}
+.dropdown-menu .divider{background: #335652}
+.dropdown-menu > li > a,.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{color: #ffebc8;background: none}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
+th{font-size: 12px;font-weight: 400;color: #999}
+.table-hover > tbody > tr:hover {background-color: #46465A;}
+.list-group-item {background: none;border:none}
+
+/*Tag*/
+.label{border-radius: 0.85em;font-weight: 400}
+.labelBid{background: #AB8500}
+.labelOfr{background: #0099AB}
+
+ 
+/*Header*/
+header{background: #0e2424;height: 50px;position: relative;z-index: 999;-webkit-app-region:drag;}
+header .logo li a, header .mainNav > li > a{padding: 15px;font-size: 14px}
+header .navbar-right{margin-right: 0}
+header .nav-pills > li > a{border-radius: 0;font-size: 12px}
+header .nav-pills > li > a:hover{background: none;color:#fff}
+header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header .nav-pills > li.active > a:hover {color: #A9D7FF;font-weight: 700}
+.mainNav{-webkit-app-region:no-drag;}
+.mainNav .dropdown-menu{height: 200px;}
+.mainNav .dropdown-menu ul{width:200px;float:left;margin:20px;}
+.secondNav{-webkit-app-region:no-drag;}
+.secondNav > li > a{height:50px;padding:0 15px;line-height: 50px}
+.secondNav > li > i{line-height: 50px}
+.windowControl{-webkit-app-region:no-drag;}
+.windowControl > li > a{padding: 0 5px;color:#C2C0A0;}
+.windowControl > li > a > i{font-size: 13px}
+
+.searchNav{margin-top:8px;width: 300px}
+.avatar{width:30px;height:30px;border-radius: 50%}
+.notiMenu.close{opacity: 1;font-size: 12px}
+.notiMenu .dropdown-toggle i{font-size: 18px; color:#ffebc8;}
+.notiMenu .label{background: #E10057;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
+
+/*Tab Bar*/
+.tabBar{background: #0e2424;border-bottom: 2px solid #FF900D}
+.tabBar .nav > li{width: 120px;text-align: center;margin:0 5px;}
+.tabBar .nav > li > a{padding: 0.25em 0.75em}
+.tabBar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
+.tabBar .nav-pills > li > a,.tabBar .nav-pills > li > a:hover,.tabBar .nav-pills > li > a:focus{background: #1a4444;color:#ffebc8;}
+.tabBar .nav-pills > li.active > a,.tabBar .nav-pills > li.active > a:hover,.tabBar .nav-pills > li.active > a:focus{background: #ff900d;color:#000;}
+.tabBar .nav > li > a::before {
+ content:'';
+ position:absolute;
+ z-index: 1;
+ top: 0;
+ left: -.5em;
+ bottom: 0;
+ width: 1.0em;
+ background: #1a4444;
+ -moz-box-shadow: -2px -2px 2px rgba(0, 0, 0, .4);
+ -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, .4);
+ box-shadow: -2px -2px 2px rgba(0, 0, 0, .4);
+ -webkit-transform: skew(-25deg);
+ -moz-transform: skew(-25deg);
+ transform: skew(-25deg);
+ -webkit-border-radius: 3px 0 0 0;
+ -moz-border-radius: 3px 0 0 0;
+ border-radius: 3px 0 0 0;
+}
+.tabBar .nav > li > a::after {
+ content:'';
+ position:absolute;
+ z-index: 1;
+ top: 0;
+ right: -.5em;
+ bottom: 0;
+ width: 1.0em;
+ background: #1a4444;
+ -moz-box-shadow: 2px -2px 2px rgba(0, 0, 0, .4);
+ -webkit-box-shadow: 2px -2px 2px rgba(0, 0, 0, .4);
+ box-shadow: 2px -2px 2px rgba(0, 0, 0, .4);	
+ -webkit-transform: skew(25deg);
+ -moz-transform: skew(25deg);
+ transform: skew(25deg);
+ -webkit-border-radius: 0 3px 0 0;
+ -moz-border-radius: 0 3px 0 0;
+ border-radius: 0 3px 0 0;
+}
+.tabBar .nav > li.active > a::before,.tabBar .nav > li.active > a::after{background: #ff900d}
+/*Left Column*/
+.leftColumn{padding-right: 10px}
+
+/*Right Column*/
+.adBanner img{width: 100%}
+
+/*Function List*/
+.funcList li{float: left;margin:10px;width: 200px;height:40px;list-style: none}
+.funcList li h3{float:left;margin:0 0 0 10px;font-size: 14px;line-height: 40px}
+.funcIcon{background: #00B48E;float:left;border-radius: 100%;width: 40px;height: 40px;overflow: hidden;transition: transform 0.1s ease-in-out;}
+.funcTrans{transform:scale(1.1,1.1);}
+.bgPurple{background: #CC40BB}
+.bgRed{background: #CB145B}
+.bgGreen{background: #3FB040}
+.bgYellow{background: #DAA900}
+
+
+/*Weather*/
+.weatherIcon{float: left;}
+.weatherIcon i{font-size: 32px;color:#E6970B;}
+.weatherTmp{font-size: 24px;float: left;margin:5px 0 0 5px;}
