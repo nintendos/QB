@@ -1,0 +1,49 @@
+
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+
+<script>
+    //   Pie.defaults = {
+    //   segmentShowStroke : true,
+    //   segmentStrokeColor : "#ff0",
+    //   segmentStrokeWidth : 1,
+    //   animation : true,
+    //   animationSteps : 100,
+    //   animationEasing : "easeOutBounce",
+    //   animateRotate : true,
+    //   animateScale : false,
+    //   onAnimationComplete : null
+    // };
+
+window.onload = function() {
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+      responsive: true
+    });
+
+    var ctx2 = document.getElementById("chart-area2").getContext("2d");
+    window.myPie = new Chart(ctx2).Pie(pieData);
+   
+};
+
+
+$(function() {
+$(".draggable").draggable();
+});
+
+</script>
+
+    <script type="text/javascript">
+        var _mfq = _mfq || [];
+        (function () {
+        var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+        mf.src = "//cdn.mouseflow.com/projects/9f17e564-1641-4d2b-b686-3b62778852fd.js";
+        document.getElementsByTagName("head")[0].appendChild(mf);
+      })();
+    </script>
+</body>
+
+</html>
