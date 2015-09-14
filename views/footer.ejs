@@ -1,34 +1,10 @@
 
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common.js"></script>
-
+<script src="js/highcharts.js"></script>
 <script>
-    //   Pie.defaults = {
-    //   segmentShowStroke : true,
-    //   segmentStrokeColor : "#ff0",
-    //   segmentStrokeWidth : 1,
-    //   animation : true,
-    //   animationSteps : 100,
-    //   animationEasing : "easeOutBounce",
-    //   animateRotate : true,
-    //   animateScale : false,
-    //   onAnimationComplete : null
-    // };
-
-window.onload = function() {
-    var ctx = document.getElementById("canvas").getContext("2d");
-    window.myLine = new Chart(ctx).Line(lineChartData, {
-      responsive: true
-    });
-
-    var ctx2 = document.getElementById("chart-area2").getContext("2d");
-    window.myPie = new Chart(ctx2).Pie(pieData);
-   
-};
-
 
 $(function() {
 $(".draggable").draggable();

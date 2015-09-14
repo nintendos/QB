@@ -134,6 +134,10 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .bgYellow{background: #DAA900}
 
 
+/* Chart */
+
+
+
 /*Weather*/
 .weatherIcon{float: left;}
 .weatherIcon i{font-size: 32px;color:#E6970B;}
