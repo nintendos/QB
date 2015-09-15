@@ -202,10 +202,10 @@
         <div class="panel-body">
 
     <script type="text/javascript">
-    var chart_background = '#111';
-    var chart_plot_background = '#222';
-
-    
+    var chart_background = 'transparent';
+    var chart_plot_background = '#111';
+    var line_color = '#333';
+    var grid_line_color = '#333';
 $(function () {
     $('#chart01').highcharts({
         chart: {
@@ -214,13 +214,16 @@ $(function () {
             plotBackgroundColor : chart_plot_background
         },
         title: {
-            text: 'US and USSR nuclear stockpiles'
+            text: 'US and USSR nuclear stockpiles',
+            align: 'left',
         },
         subtitle: {
             text: 'Source: <a href="http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf">' +
                 'thebulletin.metapress.com</a>'
         },
         xAxis: {
+          lineColor: line_color,
+          gridLineColor: grid_line_color,
             allowDecimals: false,
             labels: {
                 formatter: function () {
@@ -229,6 +232,8 @@ $(function () {
             }
         },
         yAxis: {
+          lineColor: line_color,
+          gridLineColor: grid_line_color,
             title: {
                 text: 'Nuclear weapon states'
             },
@@ -302,13 +307,13 @@ $(function () {
 
         </div>
       </div>
-      <div class="panel panel-default">
+      <div class="panel panel-default adBanner">
           <div class="panel-body">
           <div class="adBanner">
-            <img src="img/ad02.jpg" alt="">
+            <img src="img/ad02.jpg" alt="ad">
           </div>
+      </div>
     </div>
-  </div>
   <!---->
       <div class="panel panel-default">
             <h2 class="panel-title">备忘录与日历</h2>

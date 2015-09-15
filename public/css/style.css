@@ -39,7 +39,7 @@ ul{padding: 0;list-style: none}
 .dropdown-menu > li > a,.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{color: #ffebc8;background: none}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
 th{font-size: 12px;font-weight: 400;color: #999}
-.table-hover > tbody > tr:hover {background-color: #46465A;}
+.table-hover > tbody > tr:hover {background-color: #132624;}
 .list-group-item {background: none;border:none}
 
 /*Tag*/
