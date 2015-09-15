@@ -214,18 +214,34 @@ $(function () {
             plotBackgroundColor : chart_plot_background
         },
         title: {
-            text: 'US and USSR nuclear stockpiles',
+            text: '收益率曲线',
             align: 'left',
+            style: {
+              color: '#ffebc8',
+              fontSize: '14px'
+            }
+            
         },
         subtitle: {
-            text: 'Source: <a href="http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf">' +
-                'thebulletin.metapress.com</a>'
+            text: '来源: <a href="http://www.sumscope.com">' + 'Quoteboard</a>',
+            align: 'left',
+            style: {
+              color: '#ffebc8'
+            }
+        },
+        legend: {
+          itemStyle:{
+              color: '#ffebc8'
+          }
         },
         xAxis: {
           lineColor: line_color,
           gridLineColor: grid_line_color,
             allowDecimals: false,
             labels: {
+                style:{
+                  color: '#ccc'
+                },              
                 formatter: function () {
                     return this.value; // clean, unformatted number for year
                 }
@@ -235,9 +251,12 @@ $(function () {
           lineColor: line_color,
           gridLineColor: grid_line_color,
             title: {
-                text: 'Nuclear weapon states'
+                text: '收益率(%)'
             },
             labels: {
+                style:{
+                  color: '#ccc'
+                },
                 formatter: function () {
                     return this.value / 1000 + 'k';
                 }
