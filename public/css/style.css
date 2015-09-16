@@ -117,6 +117,25 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
  border-radius: 0 3px 0 0;
 }
 .tabBar .nav > li.active > a::before,.tabBar .nav > li.active > a::after{background: #ff900d}
+
+/*Tab Bar Lv2*/
+.tabBarLv2 .nav > li{width: 80px;text-align: center;}
+.tabBarLv2 .nav > li+li{margin:0 1px;}
+.tabBarLv2 .nav > li > a{padding: 0.1em 0.75em;font-weight: 700}
+.tabBarLv2 .nav-pills > li > a{border-radius:0;}
+.tabBarLv2 .nav-pills > li > a,.tabBarLv2 .nav-pills > li > a:focus{background: #184445;color:#ffebc8;}
+.tabBarLv2 .nav-pills > li > a:hover{background: #205456;color:#ffebc8;}
+.tabBarLv2 .nav-pills > li.active > a,.tabBarLv2 .nav-pills > li.active > a:hover,.tabBarLv2 .nav-pills > li.active > a:focus{background: #f68d20;color:#000;}
+
+/*Tab Bar Lv3*/
+.tabBarLv3 .nav > li{width: 80px;text-align: center;}
+.tabBarLv3 .nav > li > a{padding: 0.1em 0.75em;font-weight: 700}
+.tabBarLv3 .nav-pills > li > a{border-radius:0;border:1px solid #f68d20;}
+.tabBarLv3 .nav-pills > li > a,.tabBarLv3 .nav-pills > li > a:focus{background: #184445;color:#ffebc8;}
+.tabBarLv3 .nav-pills > li > a:hover{background: #205456;color:#ffebc8;}
+.tabBarLv3 .nav-pills > li.active > a,.tabBarLv3 .nav-pills > li.active > a:hover,.tabBarLv3 .nav-pills > li.active > a:focus{background: #f68d20;color:#000;}
+
+
 /*Left Column*/
 .leftColumn{padding-right: 10px}
 
