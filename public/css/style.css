@@ -4,8 +4,8 @@
  */
 
 body{/*background-image:linear-gradient(135deg, #434351, #323241);*/background:#111;color:#ffebc8;-webkit-user-select:none;}
-a:link, a:visited{color:#ffebc8;}
-a:hover, a:active{color:#fff;}
+a:link, a:visited{color:#ffebc8;outline: none;}
+a:hover, a:active{color:#fff;outline: none;}
 ul{padding: 0;list-style: none}
 
 /*.glyphicon {

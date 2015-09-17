@@ -16,4 +16,7 @@ module.exports = function(app){
 	app.get('/ib', function(req, res, next) {
 	  res.render('ib', { pagetitle: '经纪商现券 - Quoteboard' });
 	});
+	app.get('/charts', function(req, res, next) {
+	  res.render('charts', { pagetitle: '图表示例 - Quoteboard' });
+	});
 };
