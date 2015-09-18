@@ -23,8 +23,8 @@ ul{padding: 0;list-style: none}
 */
 
 /*Bootstrap Hack*/
-.panel{background: #111716;border:0}
-.panel-title{padding-left:10px;color:#ffebc8;background: #0e2424;font-size: 14px;line-height: 28px;border-radius: 3px 3px 0 0}
+.panel{background: #111716;border:0;margin-bottom: 5px}
+.panel-title{padding-left:10px;color:#ffebc8;background: #1a4444;font-size: 14px;line-height: 28px;border-radius: 3px 3px 0 0}
 .panel-body{padding-bottom: 10px;border:2px solid #164649;}
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
 .nav > li > a:focus, .nav > li > a:hover{background: none}
@@ -45,6 +45,9 @@ ul{padding: 0;list-style: none}
 th{font-size: 12px;font-weight: 400;color: #999}
 .table-hover > tbody > tr:hover {background-color: #132624;}
 .list-group-item {background: none;border:none}
+
+
+
 
 /*Tag*/
 .label{border-radius: 0.85em;font-weight: 400}
@@ -76,7 +79,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .notiMenu .label{background: #E10057;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
 
 /*Tab Bar*/
-.tabBar{background: #0e2424;border-bottom: 2px solid #FF900D;margin-bottom:5px;}
+.tabBar{background: #0e2424;border-bottom: 2px solid #FF900D;margin-bottom:5px;padding-left: 10px}
 .tabBar .nav > li{width: 120px;text-align: center;margin:0 5px;}
 .tabBar .nav > li > a{padding: 0.25em 0.75em}
 .tabBar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
@@ -152,7 +155,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 
 
 /*Left Column*/
-.leftColumn{padding-right: 10px}
+.leftColumn{}
 
 /*Right Column*/
 .adBanner img{width: 100%}
