@@ -79,13 +79,13 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .notiMenu .label{background: #E10057;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
 
 /*Tab Bar*/
-.tabBar{background: #0e2424;border-bottom: 2px solid #FF900D;margin-bottom:5px;padding-left: 10px}
-.tabBar .nav > li{width: 120px;text-align: center;margin:0 5px;}
-.tabBar .nav > li > a{padding: 0.25em 0.75em}
-.tabBar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
-.tabBar .nav-pills > li > a,.tabBar .nav-pills > li > a:hover,.tabBar .nav-pills > li > a:focus{background: #1a4444;color:#ffebc8;}
-.tabBar .nav-pills > li.active > a,.tabBar .nav-pills > li.active > a:hover,.tabBar .nav-pills > li.active > a:focus{background: #ff900d;color:#000;}
-.tabBar .nav > li > a::before {
+#tabbar{background: #0e2424;border-bottom: 2px solid #FF900D;margin-bottom:5px;padding-left: 10px}
+#tabbar .nav > li{width: 120px;text-align: center;margin:0 5px;}
+#tabbar .nav > li > a{padding: 0.25em 0.75em}
+#tabbar .nav-pills > li > a{border-radius:0.3em 0.3em 0 0}
+#tabbar .nav-pills > li > a,#tabbar .nav-pills > li > a:hover,#tabbar .nav-pills > li > a:focus{background: #1a4444;color:#ffebc8;}
+#tabbar .nav-pills > li.active > a,#tabbar .nav-pills > li.active > a:hover,#tabbar .nav-pills > li.active > a:focus{background: #ff900d;color:#000;}
+#tabbar .nav > li > a::before {
  content:'';
  position:absolute;
  z-index: 1;
@@ -104,7 +104,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
  -moz-border-radius: 3px 0 0 0;
  border-radius: 3px 0 0 0;
 }
-.tabBar .nav > li > a::after {
+#tabbar .nav > li > a::after {
  content:'';
  position:absolute;
  z-index: 1;
@@ -123,7 +123,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
  -moz-border-radius: 0 3px 0 0;
  border-radius: 0 3px 0 0;
 }
-.tabBar .nav > li.active > a::before,.tabBar .nav > li.active > a::after{background: #ff900d}
+#tabbar .nav > li.active > a::before,#tabbar .nav > li.active > a::after{background: #ff900d}
 
 /*Tab Bar Lv2*/
 .tabBarLv2 .nav > li{width: 80px;text-align: center;}

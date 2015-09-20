@@ -5,10 +5,16 @@
 <script src="js/common.js"></script>
 <script src="js/highcharts.js"></script>
 <script>
-
 $(function() {
 $(".draggable").draggable();
+
+//tab highlight
+current_url=$("#current_url").html();
+$("#tabbar li a[href='/"+current_url+"']").parent().addClass("active").css("z-index","99");
+
+
 });
+
 
 </script>
 

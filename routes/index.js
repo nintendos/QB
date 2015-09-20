@@ -11,12 +11,12 @@
 
 module.exports = function(app){
 	app.get('/', function(req, res, next) {
-	  res.render('index', { pagetitle: '我的主页 - Quoteboard' });
+	  res.render('index', { pagetitle: '我的主页 - Quoteboard', url:'' });
 	});
 	app.get('/ib', function(req, res, next) {
-	  res.render('ib', { pagetitle: '经纪商现券 - Quoteboard' });
+	  res.render('ib', { pagetitle: '经纪商现券 - Quoteboard', url:'ib' });
 	});
 	app.get('/charts', function(req, res, next) {
-	  res.render('charts', { pagetitle: '图表示例 - Quoteboard' });
+	  res.render('charts', { pagetitle: '图表示例 - Quoteboard', url:'charts' });
 	});
 };

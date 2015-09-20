@@ -1,8 +1,9 @@
 <!---->
-<div class="row tabBar">
+<div class="row" id="tabbar">
     <div class="col-xs-18 col-sm-8 col-md-12">
+	<div id="current_url" style="display:none"><%= url %></div>
        <ul class="nav nav-pills" role="tablist">
-        <li role="presentation" class="active" style="position:relative;z-index:4"><a href="/">我的主页</a></li>
+        <li role="presentation" style="position:relative;z-index:4"><a href="/">我的主页</a></li>
         <li role="presentation" style="position:relative;z-index:3"><a href="/ib">经纪商现券</a></li>
         <li role="presentation" style="position:relative;z-index:2"><a href="/sn">超级新债通<span class="badge">3</span></a></li>
         <li role="presentation" style="position:relative;z-index:1"><a href="/charts">图表</a></li>
