@@ -19,4 +19,7 @@ module.exports = function(app){
 	app.get('/charts', function(req, res, next) {
 	  res.render('charts', { pagetitle: '图表示例 - Quoteboard', url:'charts' });
 	});
+	app.get('/ui-controls', function(req, res, next) {
+	  res.render('ui-controls', { pagetitle: 'UI元素 - Quoteboard', url:'ui-controls' });
+	});
 };
