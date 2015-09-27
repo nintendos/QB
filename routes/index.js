@@ -22,4 +22,7 @@ module.exports = function(app){
 	app.get('/ui-controls', function(req, res, next) {
 	  res.render('ui-controls', { pagetitle: 'UI元素 - Quoteboard', url:'ui-controls' });
 	});
+	app.get('/motion', function(req, res, next) {
+	  res.render('motion', { pagetitle: '动效示例 - Quoteboard', url:'motion' });
+	});
 };

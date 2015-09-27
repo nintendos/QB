@@ -10,66 +10,32 @@
   <!--Left Content-->
   <div class="col-xs-12 col-sm-6 col-md-8 leftColumn">
 
-	<div class="panel panel-default draggable">
-	  <div class="panel-body">
 
-      <ul class="funcList">
-        <li>
-        <div class="funcIcon bgPurple">
-          <svg width="40" height="40" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(10 10) scale(0.6)">
-              <rect x="13.5" y="24.305" fill="#fff" width="9" height="23.695"/>
-              <rect x="3.543" y="3.333" fill="#fff" width="3.336" height="53.667"/>
-              <rect x="4.336" y="53.664" fill="#fff" width="62" height="3.336"/>
-              <rect x="28.5" y="21.145" fill="#fff" width="9" height="26.855"/>
-              <rect x="43.5" y="11.667" fill="#fff" width="9" height="36.333"/>
-            </g>
-          </svg>     
-        </div>
-        <h3>我的关注</h3>
-      </li>
-        <li>
-        <div class="funcIcon bgYellow">
-          <svg width="40" height="40" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(10 10) scale(0.6)">
-              <rect x="13.5" y="24.305" fill="#fff" width="9" height="23.695"/>
-              <rect x="3.543" y="3.333" fill="#fff" width="3.336" height="53.667"/>
-              <rect x="4.336" y="53.664" fill="#fff" width="62" height="3.336"/>
-              <rect x="28.5" y="21.145" fill="#fff" width="9" height="26.855"/>
-              <rect x="43.5" y="11.667" fill="#fff" width="9" height="36.333"/>
-            </g>
-          </svg>     
-        </div>
-        <h3>债券价格试算</h3>
-      </li>
-        <li>
-        <div class="funcIcon bgRed">
-          <svg width="40" height="40" viewBox="0 0 60 60" preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(10 10) scale(0.6)">
-              <rect x="13.5" y="24.305" fill="#fff" width="9" height="23.695"/>
-              <rect x="3.543" y="3.333" fill="#fff" width="3.336" height="53.667"/>
-              <rect x="4.336" y="53.664" fill="#fff" width="62" height="3.336"/>
-              <rect x="28.5" y="21.145" fill="#fff" width="9" height="26.855"/>
-              <rect x="43.5" y="11.667" fill="#fff" width="9" height="36.333"/>
-            </g>
-          </svg>     
-        </div>
-        <h3>经纪商现券</h3>
-      </li>
-      </ul>
-
-      </div>
-	  </div>
   <!---->
       <div class="panel panel-default">
           <h2 class="panel-title">今日头寸</h2>
           <div class="panel-body">
+            <div class="tabBarLv2">
+              <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="#">线上</a></li>
+                <li role="presentation"><a href="#">同存</a></li>
+                <li role="presentation"><a href="#">理财</a></li>
+                <li role="presentation"><a href="#">其他</a></li>
+              </ul>              
+            </div>
 
             <div class="filters">
               <ul class="nav nav-pills">
                 <li role="presentation" class="active"><a href="#">全部</a></li>
                 <li role="presentation"><a href="#">3M</a></li>
                 <li role="presentation"><a href="#">6M</a></li>
+              </ul>              
+              <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="#">全部</a></li>
+                <li role="presentation"><a href="#">3千万以下</a></li>
+                <li role="presentation"><a href="#">3-5千万</a></li>
+                <li role="presentation"><a href="#">5千万-1亿</a></li>
+                <li role="presentation"><a href="#">1亿以上</a></li>
               </ul>              
             </div>
               <table class="table table-hover">
@@ -280,72 +246,22 @@ $(function () {
 <!--QM-->
 
       <div class="panel panel-default qeuMessenger">
-            <h2 class="panel-title">快讯RSS</h2>
+            <h2 class="panel-title">Qeu Messenger</h2>
           <div class="panel-body">
-
-            <div class="box box-primary direct-chat direct-chat-primary">
-                <div class="box-header with-border">
-                  <div class="box-tools pull-right">
-                    <span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>
+            
+            <div>
+              <ul>
+                <li>
+                  <a href="" class="pull-left">李小明</a>
+                  <span class="time pull-right">16:35</span>
+                  <div class="clearfix"></div>
+                  <div class="con">
+                    hi,大家好
                   </div>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <!-- Conversations are loaded here -->
-                  <div class="direct-chat-messages">
-                    <!-- Message. Default to the left -->
-                    <div class="direct-chat-msg">
-                      <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                        <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
-                      </div><!-- /.direct-chat-info -->
-                      <img src="img/avatar.png" class="avatar" width="20" alt="">
-                      <div class="direct-chat-text">
-                        Is this template really for free? That's unbelievable!
-                      </div><!-- /.direct-chat-text -->
-                    </div><!-- /.direct-chat-msg -->
+                </li>
+              </ul>
+            </div>
 
-                    <!-- Message to the right -->
-                    <div class="direct-chat-msg right">
-                      <div class="direct-chat-info clearfix">
-                        <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                        <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-                      </div><!-- /.direct-chat-info -->
-                      <img src="img/avatar.png" class="avatar" width="20" alt="">
-                      <div class="direct-chat-text">
-                        You better believe it!
-                      </div><!-- /.direct-chat-text -->
-                    </div><!-- /.direct-chat-msg -->
-                  </div><!--/.direct-chat-messages-->
-
-                  <!-- Contacts are loaded here -->
-                  <div class="direct-chat-contacts">
-                    <ul class="contacts-list">
-                      <li>
-                        <a href="#">
-                          <img src="img/avatar.png" class="avatar" width="20" alt="">
-                          <div class="contacts-list-info">
-                            <span class="contacts-list-name">
-                              Count Dracula
-                              <small class="contacts-list-date pull-right">2/28/2015</small>
-                            </span>
-                            <span class="contacts-list-msg">How have you been? I was...</span>
-                          </div><!-- /.contacts-list-info -->
-                        </a>
-                      </li><!-- End Contact Item -->
-                    </ul><!-- /.contatcts-list -->
-                  </div><!-- /.direct-chat-pane -->
-                </div><!-- /.box-body -->
-                <div class="box-footer">
-                  <form action="#" method="post">
-                    <div class="input-group">
-                      <input name="message" placeholder="Type Message ..." class="form-control" type="text">
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-flat">Send</button>
-                      </span>
-                    </div>
-                  </form>
-                </div><!-- /.box-footer-->
-              </div>
 
         </div>
       </div>
