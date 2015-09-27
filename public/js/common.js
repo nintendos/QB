@@ -64,43 +64,43 @@ $(function() {
 		);
 
 //天气
-$.ajax({
-	url: "http://apis.baidu.com/heweather/weather/free?city=shanghai",
-	type: "GET",
-	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
-	success: function(data) {
-			var p = data["HeWeather data service 3.0"][0];// w = JSON.stringify(p);//Key中包含非法字符时反序列化的另一种形式   " + p.now.cond.code + "
-			var m = [
-				{"name":"&#xe603;","value":100,"cname":"晴"},
-				{"name":"&#xe604;","value":101,"cname":"多云"},
-				{"name":"&#xe60c;","value":305,"cname":"小雨"},
-				{"name":"&#xe61b;","value":502,"cname":"霾"},
-				{"name":"&#xe606;","value":300,"cname":"阵雨"},
-				{"name":"&#xe605;","value":104,"cname":"阴"},
-				{"name":"&#xe607;","value":302,"cname":"雷阵雨"},
-				{"name":"&#xe610;","value":400,"cname":"小雪"},
-				{"name":"&#xe60f;","value":407,"cname":"阵雪"},
-				{"name":"&#xe618;","value":501,"cname":"雾"},
-				{"name":"&#xe60b;","value":404,"cname":"雨夹雪"},
-				{"name":"&#xe609;","value":403,"cname":"暴雪"},
-				{"name":"&#xe60d;","value":310,"cname":"暴雨"},
-				{"name":"&#xe614;","value":306,"cname":"中雨"},
-				{"name":"&#xe611;","value":402,"cname":"大雪"},
-				{"name":"&#xe60a;","value":307,"cname":"大雨"},
-				{"name":"&#xe615;","value":401,"cname":"中雪"},
-				{"name":"&#xe60e;","value":311,"cname":"大暴雨"},
-				{"name":"&#xe616;","value":312,"cname":"特大暴雨"},
-			];
-			$.each(m, function(index,item){
-				if(item.value == p.now.cond.code){
-					n = item.name;
-					return false;
-				}
-			});
-			$('#weather').html("<div class='weatherIcon'><i class='iconfont'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
+// $.ajax({
+// 	url: "http://apis.baidu.com/heweather/weather/free?city=shanghai",
+// 	type: "GET",
+// 	beforeSend: function(xhr){xhr.setRequestHeader('apikey', '0e2fd8789611cfd7363f038a7244927f');},//这里设置header
+// 	success: function(data) {
+// 			var p = data["HeWeather data service 3.0"][0];// w = JSON.stringify(p);//Key中包含非法字符时反序列化的另一种形式   " + p.now.cond.code + "
+// 			var m = [
+// 				{"name":"&#xe603;","value":100,"cname":"晴"},
+// 				{"name":"&#xe604;","value":101,"cname":"多云"},
+// 				{"name":"&#xe60c;","value":305,"cname":"小雨"},
+// 				{"name":"&#xe61b;","value":502,"cname":"霾"},
+// 				{"name":"&#xe606;","value":300,"cname":"阵雨"},
+// 				{"name":"&#xe605;","value":104,"cname":"阴"},
+// 				{"name":"&#xe607;","value":302,"cname":"雷阵雨"},
+// 				{"name":"&#xe610;","value":400,"cname":"小雪"},
+// 				{"name":"&#xe60f;","value":407,"cname":"阵雪"},
+// 				{"name":"&#xe618;","value":501,"cname":"雾"},
+// 				{"name":"&#xe60b;","value":404,"cname":"雨夹雪"},
+// 				{"name":"&#xe609;","value":403,"cname":"暴雪"},
+// 				{"name":"&#xe60d;","value":310,"cname":"暴雨"},
+// 				{"name":"&#xe614;","value":306,"cname":"中雨"},
+// 				{"name":"&#xe611;","value":402,"cname":"大雪"},
+// 				{"name":"&#xe60a;","value":307,"cname":"大雨"},
+// 				{"name":"&#xe615;","value":401,"cname":"中雪"},
+// 				{"name":"&#xe60e;","value":311,"cname":"大暴雨"},
+// 				{"name":"&#xe616;","value":312,"cname":"特大暴雨"},
+// 			];
+// 			$.each(m, function(index,item){
+// 				if(item.value == p.now.cond.code){
+// 					n = item.name;
+// 					return false;
+// 				}
+// 			});
+// 			$('#weather').html("<div class='weatherIcon'><i class='iconfont'>" + n + "</i></div><div class='weatherTmp'>" + p.now.tmp + "℃</div><div class='clearfix'></div><div class='weatherCond'><span>"+ p.now.cond.txt +"</span>&nbsp;&nbsp;<span>" + p.aqi.city.qlty + "</span></div>");
 
-	}
-});
+// 	}
+// });
 
 })
 

@@ -51,8 +51,8 @@ th{font-size: 12px;font-weight: 400;color: #999}
 
 /*Tag*/
 .label{border-radius: 0.85em;font-weight: 400}
-.labelBid{background: #AB8500}
-.labelOfr{background: #0099AB}
+.bid{background: #C85D19;color: #fff}
+.ofr{background: #0099AB;color: #fff}
 
  
 /*Header*/
@@ -179,3 +179,10 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .weatherIcon{float: left;}
 .weatherIcon i{font-size: 32px;color:#E6970B;}
 .weatherTmp{font-size: 24px;float: left;margin:5px 0 0 5px;}
+
+
+/*Quote QM*/
+
+/*Quote Model*/
+.quoteModel{height:32px;line-height:32px;margin:5px;border-radius: 3px;}
+.quoteModel span{margin:0 10px;}
