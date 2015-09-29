@@ -31,11 +31,12 @@ module.exports = function(app){
 		//http://apis.baidu.com/heweather/weather/free?city=shanghai&apikey=0e2fd8789611cfd7363f038a7244927f
 	   var getWeatherInfo = http.get("http://api.heweather.com/x3/weather?cityid=shanghai&key=b66e0d0a5a494ca59cf62b644558f35c", function(res){
 	        res.on("data",function(data){
+	            // data = JSON.stringify(data);
 	            data = JSON.parse(data);
 	            // callback(data);
 	            // console.log( data["HeWeather data service 3.0"][0] );
 
-	            // return "data";
+	            // return data;
 	        });
 	    }); 
 	// };

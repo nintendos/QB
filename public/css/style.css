@@ -151,7 +151,8 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .tabBarLv32 .nav-pills > li.active > a,.tabBarLv32 .nav-pills > li.active > a:hover,.tabBarLv32 .nav-pills > li.active > a:focus{background: #f68d20;}
 
 /*Filter*/
-.filters .nav{margin:5px;}
+.filters{margin:5px;}
+.filters .nav{margin:2px;}
 .filters .nav > li{text-align: center;}
 .filters .nav > li+li{margin-right:1px;}
 .filters .nav > li > a{padding: 0.1em 0.75em;font-weight: 700}
