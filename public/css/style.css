@@ -25,7 +25,7 @@ ul{padding: 0;list-style: none}
 /*Bootstrap Hack*/
 .panel{background: #111716;border:0;margin-bottom: 5px}
 .panel-title{padding-left:10px;color:#ffebc8;background: #1a4444;font-size: 14px;line-height: 28px;border-radius: 3px 3px 0 0}
-.panel-body{padding-bottom: 10px;border:2px solid #164649;}
+.panel-body{border:2px solid #164649;}
 /*.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{background: none}
 .nav > li > a:focus, .nav > li > a:hover{background: none}*/
 .nav-pills > li + li{margin:0;}
@@ -44,7 +44,6 @@ ul{padding: 0;list-style: none}
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
 th{font-size: 12px;font-weight: 400;color: #999}
 .table-hover > tbody > tr:hover {background-color: #132624;}
-.list-group-item {background: none;border:none}
 
 
 
@@ -160,6 +159,10 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .filters .nav-pills > li > a:hover{background: #205456;}
 .filters .nav-pills > li.active > a,.filters .nav-pills > li.active > a:hover,.filters .nav-pills > li.active > a:focus{background: #f68d20;}
 
+/*Title Tool Bar*/
+.titleTool{margin-right: 8px;}
+.titleTool a{text-decoration: none}
+.titleTool a .iconfont{font-size: 12px;font-weight: 400}
 
 /*Left Column*/
 .leftColumn{}
@@ -189,7 +192,22 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 
 
 /*Quote QM*/
+.qeuMessenger .panel-body{padding: 0}
+.qmContactList{background: #1D2A28}
+.qmConv{padding:0;}
+.qmDialogHead{height: 40px;background: #333}
+.qmDialogList{padding: 5px}
+.qmDialogList>ul>li{margin:5px 0;}
+.qmDialogInput{height:40px;width: 100%;background:#222;}
+.qmDialogInput textarea{height:40px;width: 100%;background:none;border:0;resize:none;}
 
 /*Quote Model*/
-.quoteModel{height:32px;line-height:32px;margin:5px;border-radius: 3px;}
-.quoteModel span{margin:0 10px;}
+.quoteModel{min-height:32px;line-height:32px;margin:5px;border-radius: 3px;}
+.quoteModel span{margin:0 10px;cursor: default;}
+
+
+/*Drag*/
+.drp{background: #00D498}
+
+/*Footer*/
+footer{height:30px;line-height:30px;background: #0e2424}

@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 var http = require('http');
+// var ipc = require('ipc');
+// var qm = require('../electron/qm.js');
 // var https = require('https');
 // var express = require('express');
 // var router = express.Router();
@@ -13,36 +15,35 @@ var http = require('http');
 // module.exports = router;
 
 
+
+
 module.exports = function(app){
-	app.get('/', function(req, res, next) {
-
-	// var post_options = {
-	//     host: '127.0.0.1'
-	//     port: '8888',
-	//     path: '/api/list',
-	//     method: 'POST',
-	//     headers: {
-	//       'Content-Type': 'application/x-www-form-urlencoded',
-	//       'Content-Length': reqData.length
-	//     }
-	//   };
-
-	// var getWeatherInfo = function(callback){
+		//http://api.heweather.com/x3/weather?cityid=CN101020100&key=b66e0d0a5a494ca59cf62b644558f35c //经常因乱码无法正常获取
 		//http://apis.baidu.com/heweather/weather/free?city=shanghai&apikey=0e2fd8789611cfd7363f038a7244927f
-	   var getWeatherInfo = http.get("http://api.heweather.com/x3/weather?cityid=shanghai&key=b66e0d0a5a494ca59cf62b644558f35c", function(res){
-	        res.on("data",function(data){
-	            // data = JSON.stringify(data);
-	            data = JSON.parse(data);
-	            // callback(data);
-	            // console.log( data["HeWeather data service 3.0"][0] );
+		// http.get("http://api.heweather.com/x3/weather?cityid=CN101020100&key=b66e0d0a5a494ca59cf62b644558f35c", function(response){
+		        // "Content-Length": Buffer.byteLength(data, 'utf8'),
 
-	            // return data;
-	        });
-	    }); 
-	// };
-	var weather = getWeatherInfo;
+	app.get('/', function(req, res, next) {
+		var w = '';
+		// http.get({
+		// 	hostname:'apis.baidu.com',
+		// 	port:'80',
+		// 	path: '/heweather/weather/free?city=shanghai',
+		//     method: 'GET',
+		//     headers: {
+		//         'Content-Type': 'application/json; charset=utf-8',
+		//         'apikey': '0e2fd8789611cfd7363f038a7244927f'
+		//     }
+		// }, function(response){
+	 //        response.on("data",function(data){
+	 //        	w = data;
+  //           	response.on('end', next);
+	 //        });
+	 //    }); 
+		// function next(){
+		  res.render('index', { pagetitle: '我的主页 - Quoteboard', url:'', weather: w });
+		  // }
 
-	  res.render('index', { pagetitle: '我的主页 - Quoteboard', url:'', weather: weather });
 	});
 
 	app.get('/ib', function(req, res, next) {
@@ -61,52 +62,14 @@ module.exports = function(app){
 	  res.render('motion', { pagetitle: '动效示例 - Quoteboard', url:'motion' });
 	});
 
+	  app.get('/popupWindow', function(req, res) {
+	      var data = "我来自服务端index.js";
+	      res.send(data); 
+	      res.end();// 如果不执行end(), 那么前端网页则会一直等待response
+	  });
+		
+
 };
 
 
 
-/**
- * 获取天气数据.
- */
-
-// exports.getWeatherInfo = getWeatherInfo;
-
-
-// http.createServer(function (request, response) {
-    // var ip = URL.parse(request.url, true).query.ip;
-    // if(ip){ //有参数请求
-    //     weather.getIpInfo(ip, function(cityinfo){
-    //         var cityid = weather.getCityId(cityinfo[0], cityinfo[1]);
-    //         weather.getWeatherInfo(cityid, function(weatherinfo){
-    //             response.writeHead(200, {"Content-Type": "text/html;charset:utf-8"});
-    //             response.write(JSON.stringify(weatherinfo));
-    //             response.end();
-    //         });
-    //     });
-    // }else{  //无参数请求
-        // ip = request.headers['x-forwarded-for'] || request.connection.remoteAddress || request.socket.remoteAddress || request.connection.socket.remoteAddress;
-        // weather.getIpInfo(ip, function(cityinfo){
-            // var cityid = weather.getCityId(cityinfo[0], cityinfo[1]);
-            // getWeatherInfo(function(weatherinfo){
-            //     var weatherinfo = weatherinfo.weatherinfo;
-            //     var html = "<html>" +
-            //                                "<head>" +　
-            //                "<meta charset='utf-8'/>" + 
-            //                "<title>天气</title>" + 
-            //            "<style>*{font-family: arial, helvetica, sans-serif; font-size: 12px; color: rgb(153, 153, 153);}</style>" +
-            //            "</head>" + 
-            //            "<body>" + 
-            //            weatherinfo.city + ": " + 
-            //            weatherinfo.temp2 + "~" + weatherinfo.temp1 + " " + 
-            //            weatherinfo.weather + 
-            //            " (更新时间: " + weatherinfo.ptime + ")" + 
-            //            "</body>" + 
-            //            "</html>";
-            //     response.writeHead(200, {"Content-Type": "text/html"});
-            //     response.write(html);
-            //     response.end();
-            // });
-        // });
-    // }
-//     console.log(ip);
-// }).listen(1081);

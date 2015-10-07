@@ -9,39 +9,41 @@
 $(function() {
 
 
-	$("input[type=text]").focus(function(){
-		$(this).addClass("focus");
-	});
-	$("input[type=text]").blur(function(){
-		$(this).removeClass("focus");
-	});
-	$("input[type=text]").hover(
-		function(){
-			if($(this).is(":focus")==false){$(this).addClass("hover");}
-		},
-		function(){
-			if($(this).is(":focus")==false){$(this).removeClass("hover");}
-		}
-	);
-	$("input.btn").hover(
-		function(){
-			$(this).addClass("hover");
-		},
-		function(){
-			$(this).removeClass("hover");
-		}
-	);
+	// $("input[type=text]").focus(function(){
+	// 	$(this).addClass("focus");
+	// });
+	// $("input[type=text]").blur(function(){
+	// 	$(this).removeClass("focus");
+	// });
+	// $("input[type=text]").hover(
+	// 	function(){
+	// 		if($(this).is(":focus")==false){$(this).addClass("hover");}
+	// 	},
+	// 	function(){
+	// 		if($(this).is(":focus")==false){$(this).removeClass("hover");}
+	// 	}
+	// );
+	// $("input.btn").hover(
+	// 	function(){
+	// 		$(this).addClass("hover");
+	// 	},
+	// 	function(){
+	// 		$(this).removeClass("hover");
+	// 	}
+	// );
 
 	//Resize Canvas
 	function resizeCanvas()
 	{
-		var pw = $(window).width();
-		var ph = $(window).height();
-		var sw = $("#sideBar").width();
+		// var pw = $(window).width();
+		// var ph = $(window).height();
+		// var sw = $("#sideBar").width();
+		var qmh = $(".qeuMessenger>.panel-body").height();
 
-		$("#content").css("width",pw);
-		$("#content").css("height",ph);
-		$("#sideBar").css("height",ph);
+		// $("#content").css("width",pw);
+		// $("#content").css("height",ph);
+		// $("#sideBar").css("height",ph);
+		$(".qmContactList").css("height",qmh)
 	}
 	resizeCanvas();
 	$(window).resize(function(){resizeCanvas();});
@@ -62,6 +64,19 @@ $(function() {
 			$(this).removeClass("funcTrans")
 		}
 		);
+
+	//Highlight Active Nav/List/Table
+	$("ul.nav>li>a").click(function(){
+		$(this).parent("li").siblings().removeClass("active");
+		$(this).parent("li").addClass("active");
+	});
+
+	$(".list-group>a").click(function(){
+		$(this).siblings("a").removeClass("active");
+		$(this).addClass("active");
+	});
+
+
 
 //天气
 // $.ajax({

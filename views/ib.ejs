@@ -18,7 +18,7 @@
 
             <div class="tabBarLv31">
               <ul class="nav nav-pills">
-                <li role="presentation" class="active"><a href="#">关注一组</a></li>
+                <li role="presentation" class="active"><a href="#" id="test">关注一组</a></li>
                 <li role="presentation"><a href="#">关注二组</a></li>
                 <li role="presentation"><a href="#">关注三组</a></li>
               </ul>              
@@ -128,13 +128,21 @@
         </div>
       </div>
 
-
-
   </div>
   <!--Right Side Column End-->
-
 
 </div>
 
 
+<script>
+  $('#test').on('click', function(e) {
+    $.get('/popupWindow', function(data) {
+        // 此处的callback function中的data为server返回的数据(没有数据也可)
+        // alert(data);
+        console.log(data);
+    });
+});
+</script>
+
+<% include footer %>
 <% include bottom %>
