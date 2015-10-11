@@ -373,9 +373,9 @@
 
 <script>
   $('.icon-more').on('click', function(e) {
-    $.get('/popupWindow', function(data) {
+    $.get('/popupWindow?qm', function(data) {
         // 此处的callback function中的data为server返回的数据(没有数据也可)
-        alert(data);
+        // alert(data);
         console.log(data);
     });
 });

@@ -50,6 +50,10 @@ module.exports = function(app){
 	  res.render('ib', { pagetitle: '经纪商现券 - Quoteboard', url:'ib' });
 	});
 
+	app.get('/qm', function(req, res, next) {
+	  res.render('qm', { pagetitle: 'Messenger - Quoteboard', url:'qm' });
+	});
+
 	app.get('/charts', function(req, res, next) {
 	  res.render('charts', { pagetitle: '图表示例 - Quoteboard', url:'charts' });
 	});
@@ -63,7 +67,7 @@ module.exports = function(app){
 	});
 
 	  app.get('/popupWindow', function(req, res) {
-	      var data = "我来自服务端index.js";
+	      var data = "发射成功!";
 	      res.send(data); 
 	      res.end();// 如果不执行end(), 那么前端网页则会一直等待response
 	  });

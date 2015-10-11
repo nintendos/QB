@@ -48,7 +48,24 @@ app.on('ready', function() {
   });
 
 
-
+var webContents = mainWindow.webContents;
+webContents.on("did-get-response-details", function(event,status,headers) {
+  var h = JSON.stringify(headers); //h等于'"http://127.0.0.1:3000/ib"'
+  h = h.split('"')[1];
+  if (h.indexOf('popupWindow') != -1) {
+    var i = h.indexOf('?');
+    var s = h.substring(i + 1);
+    // var h = httpResponseCode;
+    var win = new BrowserWindow({
+      width: 800, 
+      height: 600,
+      title: s,
+      frame:false,
+      icon:'app_logo.png',
+    });
+    win.loadUrl('http://127.0.0.1:3000/'+s);
+    }
 });
 
+});
 
