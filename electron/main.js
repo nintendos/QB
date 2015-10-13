@@ -26,8 +26,8 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1024, 
-    height: 650,
+    width: 1280, 
+    height: 800,
     center:true,
     icon:'app_logo.png',
     frame:false,
@@ -37,7 +37,7 @@ app.on('ready', function() {
   mainWindow.loadUrl('http://127.0.0.1:3000/');
 
   // Open the devtools.
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -63,6 +63,9 @@ webContents.on("did-get-response-details", function(event,status,headers) {
       frame:false,
       icon:'app_logo.png',
     });
+    
+    win.openDevTools();
+
     win.loadUrl('http://127.0.0.1:3000/'+s);
     }
 });
