@@ -76,7 +76,12 @@ $(function() {
 		$(this).addClass("active");
 	});
 
-
+	$(".quoteModel").hover(
+		function(){
+		$(this).append("<div class='quoteModelTool'>abc</div>");
+	},function(){
+		$(this).find(".quoteModelTool").remove();
+	});
 
 //天气
 // $.ajax({
