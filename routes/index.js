@@ -66,11 +66,11 @@ module.exports = function(app){
 	  res.render('motion', { pagetitle: '动效示例 - Quoteboard', url:'motion' });
 	});
 
-	  app.get('/popupWindow', function(req, res) {
-	      var data = "发射成功!";
-	      res.send(data); 
-	      res.end();// 如果不执行end(), 那么前端网页则会一直等待response
-	  });
+	app.get('/popupWindow', function(req, res) {
+	  var data = "发射成功!";
+	  res.send(data); 
+	  res.end();// 如果不执行end(), 那么前端网页则会一直等待response
+	});
 		
 
 };

@@ -56,17 +56,22 @@ webContents.on("did-get-response-details", function(event,status,headers) {
     var i = h.indexOf('?');
     var s = h.substring(i + 1);
     // var h = httpResponseCode;
-    var win = new BrowserWindow({
-      width: 800, 
-      height: 600,
-      title: s,
-      frame:false,
-      icon:'app_logo.png',
-    });
-    
-    win.openDevTools();
+    if (s == 'close'){
+      app.quit();
+    }
+    else {
+      var win = new BrowserWindow({
+        width: 800, 
+        height: 600,
+        title: s,
+        frame:false,
+        icon:'app_logo.png',
+      });
+      
+      win.openDevTools();
+      win.loadUrl('http://127.0.0.1:3000/'+s);      
+      }
 
-    win.loadUrl('http://127.0.0.1:3000/'+s);
     }
 });
 

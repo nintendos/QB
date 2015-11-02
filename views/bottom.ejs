@@ -7,38 +7,46 @@
 <script src="js/highcharts.js"></script>
 <script type="text/javascript">
 $(function() {
-$(".draggable").draggable({
-  	// cursor: 'move', 
-    distance: 20,  
-  	helper:"clone",       
-    revert: 'invalid',
-    revertDuration: 100,    
-    opacity: 0.75,
-    zIndex: 9999,
-    drag: function(event, ui){
-      // $(this).css("cursor","move");
-    }
-});
-$('.droppable').droppable({
-    accept: '.draggable',            // accept only images with class 'drg'
-    activeClass: 'drp',           // add class "drp" while an accepted item is dragged
-    drop: function(event, ui) {
-      // after the draggable is droped, hides it with a hide() effect
-      // ui.draggable.hide(100);
-      $(this).siblings(".qmDialogList").append(ui.draggable.clone());
-    }
+  $(".draggable").draggable({
+    	// cursor: 'move', 
+      distance: 20,  
+    	helper:"clone",       
+      revert: 'invalid',
+      revertDuration: 100,    
+      opacity: 0.75,
+      zIndex: 9999,
+      drag: function(event, ui){
+        // $(this).css("cursor","move");
+      }
+  });
+  $('.droppable').droppable({
+      accept: '.draggable',            // accept only images with class 'drg'
+      activeClass: 'drp',           // add class "drp" while an accepted item is dragged
+      drop: function(event, ui) {
+        // after the draggable is droped, hides it with a hide() effect
+        // ui.draggable.hide(100);
+        $(this).siblings(".qmDialogList").append(ui.draggable.clone());
+      }
+    });
+
+
+  //icheck
+  $('input').iCheck();
+
+  //tab highlight
+  current_url=$("#current_url").html();
+  $("#tabbar li a[href='/"+current_url+"']").parent().addClass("active").css("z-index","99");
+
+  //Close Window
+  $('.icon-close').on('click', function(e) {
+      $.get('/popupWindow?close', function(data) {
+          console.log(data);
+      });
   });
 
-
-//icheck
-$('input').iCheck();
-
-//tab highlight
-current_url=$("#current_url").html();
-$("#tabbar li a[href='/"+current_url+"']").parent().addClass("active").css("z-index","99");
-
-
 });
+
+
 
 
 </script>

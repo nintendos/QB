@@ -160,7 +160,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .filters .nav-pills > li.active > a,.filters .nav-pills > li.active > a:hover,.filters .nav-pills > li.active > a:focus{background: #f68d20;}
 
 /*Title Tool Bar*/
-.titleTool{margin-right: 8px;}
+.titleTool{margin-right: 8px;-webkit-app-region:no-drag;}
 .titleTool a{text-decoration: none}
 .titleTool a .iconfont{font-size: 12px;font-weight: 400}
 
@@ -205,7 +205,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 /*Quote Model*/
 .quoteModel{min-height:32px;line-height:32px;margin:5px;border-radius: 3px;}
 .quoteModel span{margin:0 10px;cursor: default;}
-
+.quoteModelTool{float:right;}
 
 /*Drag*/
 .drp{background: #00D498}
