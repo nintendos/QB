@@ -8,7 +8,15 @@
 
 $(function() {
 
-
+var skin_group = ["style","style_black","style_white"];
+var skin_i = 1;
+$("#skin-switch").click(function(){
+	if(skin_i == skin_group.length){
+		skin_i = 0;
+	}
+	$("#skin-css").attr("href","css/"+skin_group[skin_i]+".css");
+	skin_i++;
+});
 	// $("input[type=text]").focus(function(){
 	// 	$(this).addClass("focus");
 	// });

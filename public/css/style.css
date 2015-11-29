@@ -60,14 +60,14 @@ header .logo li a, header .mainNav > li > a{padding: 15px;font-size: 14px}
 header .navbar-right{margin-right: 0}
 header .nav-pills > li > a{border-radius: 0;font-size: 12px}
 header .nav-pills > li > a:hover{background: none;color:#fff}
-header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header .nav-pills > li.active > a:hover {color: #A9D7FF;font-weight: 700}
+header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header .nav-pills > li.active > a:hover {color: #A9D7FF;background: none}
 .mainNav{-webkit-app-region:no-drag;}
 .mainNav .dropdown-menu{height: 200px;}
 .mainNav .dropdown-menu ul{width:200px;float:left;margin:20px;}
-.secondNav{-webkit-app-region:no-drag;}
+.secondNav{-webkit-app-region:no-drag;position: absolute;right: 80px;top:10px;}
 .secondNav > li > a{height:50px;padding:0 15px;line-height: 50px}
 .secondNav > li > i{line-height: 50px}
-.windowControl{-webkit-app-region:no-drag;}
+.windowControl{-webkit-app-region:no-drag;position: absolute;right:0;top:0;}
 .windowControl > li > a{padding: 0 5px;color:#C2C0A0;}
 .windowControl > li > a > i{font-size: 13px}
 
