@@ -46,6 +46,7 @@ module.exports = function(app){
 
 	});
 
+
 	app.get('/ib', function(req, res, next) {
 	  res.render('ib', { pagetitle: '经纪商现券 - Quoteboard', url:'ib' });
 	});
@@ -64,6 +65,25 @@ module.exports = function(app){
 
 	app.get('/motion', function(req, res, next) {
 	  res.render('motion', { pagetitle: '动效示例 - Quoteboard', url:'motion' });
+	});
+
+	app.get('/tongji', function(req, res, next) {
+		var post_options = {
+		host: 'api.baidu.com',
+		// port: '8888',
+		path: '/sem/common/HolmesLoginService',
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8',
+			'UUID': 'E4-CE-8F-15-B0-80',
+			'account_type': 1,
+			}
+		};
+
+		var post_req = https.request(post_options, function (response) {
+
+		});
+		res.render('tongji', { pagetitle: '百度统计', url:'tongji' });
 	});
 
 	app.get('/popupWindow', function(req, res) {
