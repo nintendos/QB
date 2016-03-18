@@ -8,6 +8,34 @@ a:link, a:visited{color:#ffebc8;outline: none;}
 a:hover, a:active{color:#fff;outline: none;}
 ul{padding: 0;list-style: none}
 
+@font-face {
+  font-family: 'ss';
+
+  src: url('../fonts/symbols.eot');
+  src: url('../fonts/symbols.eot?#iefix') format('embedded-opentype'), url('../fonts/symbols.woff2') format('woff2'), url('../fonts/symbols.woff') format('woff'), url('../fonts/symbols.ttf') format('truetype'), url('../fonts/symbols.svg#glyphicons_halflingsregular') format('svg');
+}
+.iconfont {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'ss';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check:before {content:"\EA08";}
+.icon-tongzhi:before{content:"\F008";}
+.icon-t:before{content:"\EA0E";}
+.icon-j:before{content:"\EA10";}
+table .iconfont{font-size: 18px;vertical-align:sub;margin:0 2px;top:0;}
+
+svg.labelIcon{fill: #111;background: #eee;border-radius: 2px;padding: 3px}
+/*svg.labelIcon symbol#icon-pen path.path1{fill: red}
 /*.glyphicon {
   position: relative;
   top: 1px;
@@ -21,6 +49,28 @@ ul{padding: 0;list-style: none}
   -moz-osx-font-smoothing: grayscale;
 }
 */
+
+/*Tag*/
+.label,.labelIcon{border-radius: 0.85em;font-weight: 400;font-size: 12px;display:inline-block;height: 18px;line-height: 18px;padding: 0 5px;}
+.labelIcon{border-radius: 2px;width:18px;height: 18px;color:#fff;line-height:16px;font-style: normal;padding: 0;text-align: center;margin:0 3px;}
+.labelBid{background: #C85D19;}
+.labelOfr{background: #0099AB;}
+
+.labelQuan {background:#6d9700;}
+.labelTuan {background:#bf6d00;}
+.labelZhu {background:#1b73e0;}
+.labelXiu {background:#1a9600;}
+.labelJiang {background:#8c6f00;}
+.labelFu {background:#ba343b;}
+.labelKua {background:#ab2d6c;}
+/*.labelQuan {background:#88e42a;color:#283b15}
+.labelTuan {background:#ffab3c;color:#111}
+.labelZhu {background:#8beb6d;color:#111}
+.labelXiu {background:#ffaa00;color:#403114}
+.labelJiang {background:#e3e500;color:#363617}
+.labelFu {background:#e73b44;color:#491215}
+.labelKua {background:#e947bb;color:#360829}*/
+.labelWarning {background:#80ff00;}
 
 /*Bootstrap Hack*/
 .panel{background: #111716;border:0;margin-bottom: 5px}
@@ -41,17 +91,12 @@ ul{padding: 0;list-style: none}
 .dropdown-menu{background: #164141;border-radius: 0;}
 .dropdown-menu .divider{background: #335652}
 .dropdown-menu > li > a,.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{color: #ffebc8;background: none}
-.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0}
-th{font-size: 12px;font-weight: 400;color: #999}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{border: 0;height: 30px;line-height: 30px;padding:0 5px;}
+th{font-size: 14px;font-weight: 400;color: #999;}
 .table-hover > tbody > tr:hover {background-color: #132624;}
 
 
 
-
-/*Tag*/
-.label{border-radius: 0.85em;font-weight: 400}
-.bid{background: #C85D19;color: #fff}
-.ofr{background: #0099AB;color: #fff}
 
  
 /*Header*/
