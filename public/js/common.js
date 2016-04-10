@@ -8,7 +8,7 @@
 
 $(function() {
 
-var skin_group = ["style","style_black","style_white"];
+var skin_group = ["style","style_blue","style_white"];
 var skin_i = 1;
 $("#skin-switch").click(function(){
 	if(skin_i == skin_group.length){

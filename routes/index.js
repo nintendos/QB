@@ -56,15 +56,15 @@ module.exports = function(app){
 	});
 
 	app.get('/charts', function(req, res, next) {
-	  res.render('charts', { pagetitle: '图表示例 - Quoteboard', url:'charts' });
+	  res.render('charts', { pagetitle: '图表 - Quoteboard', url:'charts' });
 	});
 
 	app.get('/ui-controls', function(req, res, next) {
-	  res.render('ui-controls', { pagetitle: 'UI元素 - Quoteboard', url:'ui-controls' });
+	  res.render('ui-controls', { pagetitle: 'UI基本元素 - Quoteboard', url:'ui-controls' });
 	});
 
 	app.get('/motion', function(req, res, next) {
-	  res.render('motion', { pagetitle: '动效示例 - Quoteboard', url:'motion' });
+	  res.render('motion', { pagetitle: '动效 - Quoteboard', url:'motion' });
 	});
 
 	app.get('/tongji', function(req, res, next) {
