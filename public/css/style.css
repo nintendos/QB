@@ -200,7 +200,7 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 
 /*Tab Bar Lv3_2*/
 .tabBarLv3_2 .nav > li{width: 80px;text-align: center;}
-.tabBarLv3_2 .nav > li > a{padding:0 0.75em;height:24px;line-height: 22px;}
+.tabBarLv3_2 .nav > li > a{padding:0 0.75em;height:24px;}
 .tabBarLv3_2 .nav-pills > li > a{border-radius:0;border:1px solid #f68d20;background: #184445;}
 .tabBarLv3_2 .nav-pills > li > a:hover{background: #205456;}
 .tabBarLv3_2 .nav-pills > li.active > a,.tabBarLv3_2 .nav-pills > li.active > a:hover,.tabBarLv3_2 .nav-pills > li.active > a:focus{background: #f68d20;}
