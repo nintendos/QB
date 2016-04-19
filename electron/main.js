@@ -34,7 +34,7 @@ app.on('ready', function() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('http://127.0.0.1:3000/');
+  mainWindow.loadURL('http://127.0.0.1:3000/');
 
   // Open the devtools.
   mainWindow.openDevTools();
@@ -49,7 +49,9 @@ app.on('ready', function() {
 
 
 var webContents = mainWindow.webContents;
+var win;
 webContents.on("did-get-response-details", function(event,status,headers) {
+
   var h = JSON.stringify(headers); //h等于'"http://127.0.0.1:3000/ib"'
   h = h.split('"')[1];
   if (h.indexOf('popupWindow') != -1) {
@@ -60,7 +62,8 @@ webContents.on("did-get-response-details", function(event,status,headers) {
       app.quit();
     }
     else {
-      var win = new BrowserWindow({
+        // app.quit();
+      win = new BrowserWindow({
         width: 800, 
         height: 600,
         title: s,
@@ -69,11 +72,30 @@ webContents.on("did-get-response-details", function(event,status,headers) {
       });
       
       win.openDevTools();
-      win.loadUrl('http://127.0.0.1:3000/'+s);      
+      win.loadURL('http://127.0.0.1:3000/'+s);      
       }
-
     }
 });
+
+
+//--------------------
+// var w = win.webContents;
+// w.on("did-get-response-details", function(event,status,headers) {
+//       app.quit();
+//   var h = JSON.stringify(headers); //h等于'"http://127.0.0.1:3000/ib"'
+//   h = h.split('"')[1];
+//   if (h.indexOf('popupWindow') != -1) {
+//     var i = h.indexOf('?');
+//     var s = h.substring(i + 1);
+//     // var h = httpResponseCode;
+//     if (s == 'close'){
+//     }
+//     }
+// });
+
+
+
+
 
 });
 
