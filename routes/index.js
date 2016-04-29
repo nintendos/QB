@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 var http = require('http');
+var firstblood = require('./db/firstblood_schema.js');
+
 // var ipc = require('ipc');
 // var qm = require('../electron/qm.js');
 // var https = require('https');
@@ -13,6 +15,11 @@ var http = require('http');
 // });
 
 // module.exports = router;
+
+
+/*
+ * GET home page.
+ */
 
 
 
@@ -68,6 +75,56 @@ module.exports = function(app){
 	});
 
 	app.get('/tongji', function(req, res, next) {
+		var user = new firstblood.userlist({
+			user:"sdfs",
+			password:"000",
+			age:"32"
+		});
+		user.save();
+
+		firstblood.userlist.find(function(error, result){
+		    if (error) {
+		      res.send(error);
+		    }else{
+		      res.render('tongji', {
+			  	pagetitle: 'aaa',
+		        status: 1,
+		        adminlist : result,
+		        date : new Date()
+		      });
+		    }
+		  });
+
+	});
+
+
+	app.get('/login', function(req, res, next) {
+		var query = {user: req.body.user, password: req.body.password};
+		firstblood.userlist.count(query, function(err, doc){ 
+		if (doc==1) {
+		  var findResult = firstblood.userlist.find(function(error, result){
+		    if (error) {
+		      res.send(error);
+		    }else{
+		      res.render('index', {
+		        status: doc,
+		        username : query.user,
+		        adminlist : result,
+		        date : new Date()
+		      });
+		    }
+		  });
+		}else{
+		  res.render('index', {
+		    status: doc,
+		  });
+		  //res.redirect('/');
+		}
+		});
+	});
+
+
+	app.get('/baidu', function(req, res, next) {
 		var post_options = {
 		host: 'api.baidu.com',
 		// port: '8888',
@@ -83,7 +140,7 @@ module.exports = function(app){
 		var post_req = https.request(post_options, function (response) {
 
 		});
-		res.render('tongji', { pagetitle: '百度统计', url:'tongji' });
+		res.render('baidu', { pagetitle: '百度统计', url:'baidu' });
 	});
 
 	app.get('/popupWindow', function(req, res) {
