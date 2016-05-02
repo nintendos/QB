@@ -7,10 +7,11 @@ show users
 db.admins.remove({})
 db.admins.find()
 
-use firstblood
+use qb
 db.createCollection('user')
 
-mongoimport -d firstblood -c superbond --type csv --file D:\MongoDB\superbond.csv
+mongoimport -d qb -c superbond --type csv --headerline --file D:\MongoDB\superbond.csv
+./mongoimport -d qb -c superbonds --type csv --headerline --file /Users/jiangli/Documents/Project/QB/db/superbond.csv
 
 
 use <db name>：切换当前数据库，这和MS-SQL里面的意思一样

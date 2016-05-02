@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var http = require('http');
-var firstblood = require('./db/firstblood_schema.js');
+var qb = require('./db/qb_schema.js');
 
 // var ipc = require('ipc');
 // var qm = require('../electron/qm.js');
@@ -75,7 +75,7 @@ module.exports = function(app){
 	});
 
 	app.get('/tongji', function(req, res, next) {
-		// var user = new firstblood.superbond({
+		// var user = new qb.superbond({
 		// 	  event_id: '123131',
 		// 	  account: 'erwer',
 		// 	  time: '2016-12-12',
@@ -93,15 +93,68 @@ module.exports = function(app){
 		// });
 		// user.save();
 
-		// result = firstblood.superbond.find({"$where":"this.event_key==this.event_key"});
+		// result = qb.superbond.find({"$where":"this.event_key==this.event_key"});
 
-		var group = { firstField: "$time", secondField: "$time_next"};
-			result = firstblood.superbond.aggregate(
-				{"$project" :{group :1}},
-				{"$group":{"_id":group,"count":{"$sum":1}}},
-				{"$sort":{"count":-1}},
-				{"$limit":58}
-				);
+		// var group = { firstField: "$time", secondField: "$time_next"};
+		// 	result = qb.superbond.aggregate(
+		// 		{"$project" :{group :1}},
+		// 		{"$group":{"_id":group,"count":{"$sum":1}}},
+		// 		{"$sort":{"count":-1}},
+		// 		{"$limit":58}
+		// 		);
+
+//-------aggregate
+			// var result = qb.superbond.aggregate([
+			// { $group: { 
+			// _id: { time: "$time", time: "$time_next" }, 
+			// uniqueIds: { $addToSet: "$_id" },
+			// count: { $sum: 1 } 
+			// }}, 
+			// { $match: { 
+			// count: { $gt: 1 } 
+			// }}
+			// ]);
+		 //  res.render('tongji', {
+			//   	pagetitle: 'aaa',
+		 //        status: 1,
+		 //        datalist : result,
+		 //        date : new Date()
+		 //      });
+
+
+//--------MapReduce实现
+// map=function (){
+//  emit({event_key:this.event_key,event_value:this.event_value},{count:1});
+// }
+
+// reduce=function (key,values){
+// 	var cnt=0;   
+// 	values.forEach(function(val){cnt+=val.count;});  
+// 	return {"count":cnt};
+// }
+
+// qb.superbond.mapReduce(map,reduce,{out:"mr2"});
+
+
+
+//MapReduce实现
+map=function (){
+ emit(this.account,{count:1})
+}
+
+reduce=function (key,values){
+ var cnt=0;   
+values.forEach(function(val){ cnt+=val.count;});  
+return {"count":cnt};
+}
+//MR结果存到集合mr1
+qb.superbond.mapReduce(map,reduce,{out:"mr2"});
+
+
+qb.mr2.find(function(error, result){
+		    if (error) {
+		      res.send(error);
+		    }else{
 			// result = JSON.stringify(result);
 		  res.render('tongji', {
 			  	pagetitle: 'aaa',
@@ -109,9 +162,10 @@ module.exports = function(app){
 		        datalist : result,
 		        date : new Date()
 		      });
+		}
+	});
 
-
-		// firstblood.superbond.find(function(error, result){
+		// qb.superbond.find(function(error, result){
 		//     if (error) {
 		//       res.send(error);
 		//     }else{
@@ -124,14 +178,15 @@ module.exports = function(app){
 		//     }
 		//   });
 
+
 	});
 
 
 	app.get('/login', function(req, res, next) {
 		var query = {user: req.body.user, password: req.body.password};
-		firstblood.userlist.count(query, function(err, doc){ 
+		qb.userlist.count(query, function(err, doc){ 
 		if (doc==1) {
-		  var findResult = firstblood.userlist.find(function(error, result){
+		  var findResult = qb.userlist.find(function(error, result){
 		    if (error) {
 		      res.send(error);
 		    }else{
