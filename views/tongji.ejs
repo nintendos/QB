@@ -8,26 +8,47 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-    <h1>后台管理</h1>
+    <h1>超级新债通</h1>
+  <%= result %>  
+
+
   <% if (status) { %>  
-    <h3>管理员列表</h3>
-    <% if (adminlist.length) { %>  
-      <table class="table table-hover span12">
+    <h3>数据列表</h3>
+    <% if (datalist.length) { %>  
+      <table class="table">
         <thead>
         <tr>
-          <th>#</th>
-          <th>用户名</th>
-          <th>密码</th>
-          <th>年龄</th>
+            <td>event_id</td>
+            <td>account</td>
+            <td>time</td>
+            <td>time_next</td>
+            <td>event_key</td>
+            <td>event_value</td>
+            <td>MainWindow</td>
+            <td>time_stay</td>
+            <td>func</td>
+            <td>func_last</td>
+            <td>cp</td>
+            <td>cp_type</td>
+            <td>city</td>
         </tr>
         </thead>
         <tbody>
-        <% adminlist.forEach(function(data){ %>
+        <% datalist.forEach(function(data){ %>
           <tr>
-            <td><%= data.id %></td>
-            <td><%= data.user %></td>
-            <td><%= data.password %></td>
-            <td><%= data.age %></td>
+            <td><%= data.event_id %></td>
+            <td><%= data.account %></td>
+            <td><%= data.time %></td>
+            <td><%= data.time_next %></td>
+            <td><%= data.event_key %></td>
+            <td><%= data.event_value %></td>
+            <td><%= data.MainWindow %></td>
+            <td><%= data.time_stay %></td>
+            <td><%= data.func %></td>
+            <td><%= data.func_last %></td>
+            <td><%= data.cp %></td>
+            <td><%= data.cp_type %></td>
+            <td><%= data.city %></td>
           </tr>
         <% }) %>  
         </tbody>
@@ -48,3 +69,4 @@
 
 <% include footer %>
 <% include bottom %>
+

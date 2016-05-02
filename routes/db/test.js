@@ -1,4 +1,4 @@
-
+mongod --config d:\MongoDB\mongo.config
 mongo
 help
 show dbs
@@ -10,7 +10,7 @@ db.admins.find()
 use firstblood
 db.createCollection('user')
 
-./bin/mongoimport -d firstblood -c superbond --type csv --headerline --file F:\MongoDB\superbond.csv
+mongoimport -d firstblood -c superbond --type csv --file D:\MongoDB\superbond.csv
 
 
 use <db name>：切换当前数据库，这和MS-SQL里面的意思一样

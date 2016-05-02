@@ -7,15 +7,24 @@ db.on('error', function(error) {
 });
 // Schema 结构
 var Schema = mongoose.Schema;
-var userlistScheMa = new Schema({
-  user   : {type : String},
-  password : {type : String},
-  //content  : {type : String},
+var superbondScheMa = new Schema({
+  event_id: {type : Number},
+  account: {type : String},
   //time     : {type : Date, default: Date.now},
-  age     : {type : Number}
+  time: {type : Date},
+  time_next: {type : Date},
+  event_key: {type : String},
+  event_value: {type : String},
+  MainWindow: {type : Number},
+  time_stay: {type : Number},
+  func: {type : String},
+  func_last: {type : String},
+  cp: {type : String},
+  cp_type: {type : String},
+  city: {type : String},
 });
-// 关联 firstblood -> admins 表
-exports.userlist = db.model('admins', userlistScheMa);
+// 关联 firstblood -> superbond 表
+exports.superbond = db.model('superbond', superbondScheMa);
 exports.db = db;
 
-
+						

@@ -75,25 +75,54 @@ module.exports = function(app){
 	});
 
 	app.get('/tongji', function(req, res, next) {
-		var user = new firstblood.userlist({
-			user:"sdfs",
-			password:"000",
-			age:"32"
-		});
-		user.save();
+		// var user = new firstblood.superbond({
+		// 	  event_id: '123131',
+		// 	  account: 'erwer',
+		// 	  time: '2016-12-12',
+		// 	  time_next: '2016-12-12',
+		// 	  event_key: 'erwer',
+		// 	  event_value: 'erwer',
+		// 	  MainWindow:'2114',
+		// 	  time_stay: '23214',
+		// 	  func: 'erwer',
+		// 	  func_last: 'erwer',
+		// 	  cp: 'erwer',
+		// 	  cp_type: 'erwer',
+		// 	  city: 'erwer',
 
-		firstblood.userlist.find(function(error, result){
-		    if (error) {
-		      res.send(error);
-		    }else{
-		      res.render('tongji', {
+		// });
+		// user.save();
+
+		// result = firstblood.superbond.find({"$where":"this.event_key==this.event_key"});
+
+		var group = { firstField: "$time", secondField: "$time_next"};
+			result = firstblood.superbond.aggregate(
+				{"$project" :{group :1}},
+				{"$group":{"_id":group,"count":{"$sum":1}}},
+				{"$sort":{"count":-1}},
+				{"$limit":58}
+				);
+			// result = JSON.stringify(result);
+		  res.render('tongji', {
 			  	pagetitle: 'aaa',
 		        status: 1,
-		        adminlist : result,
+		        datalist : result,
 		        date : new Date()
 		      });
-		    }
-		  });
+
+
+		// firstblood.superbond.find(function(error, result){
+		//     if (error) {
+		//       res.send(error);
+		//     }else{
+		//       res.render('tongji', {
+		// 	  	pagetitle: 'aaa',
+		//         status: 1,
+		//         datalist : result,
+		//         date : new Date()
+		//       });
+		//     }
+		//   });
 
 	});
 
