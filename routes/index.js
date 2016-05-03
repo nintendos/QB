@@ -103,7 +103,7 @@ module.exports = function(app){
 		// 		{"$limit":58}
 		// 		);
 
-//-------aggregate
+		//-------aggregate
 			// var result = qb.superbond.aggregate([
 			// { $group: { 
 			// _id: { time: "$time", time: "$time_next" }, 
@@ -122,48 +122,48 @@ module.exports = function(app){
 		 //      });
 
 
-//--------MapReduce实现
+		//--------MapReduce实现
+		// map=function (){
+		//  emit({event_key:this.event_key,event_value:this.event_value},{count:1});
+		// }
+
+		// reduce=function (key,values){
+		// 	var cnt=0;   
+		// 	values.forEach(function(val){cnt+=val.count;});  
+		// 	return {"count":cnt};
+		// }
+
+		// qb.superbond.mapReduce(map,reduce,{out:"mr2"});
+
+
+
+// //MapReduce实现
 // map=function (){
-//  emit({event_key:this.event_key,event_value:this.event_value},{count:1});
+//  emit(this.account,{count:1})
 // }
 
 // reduce=function (key,values){
-// 	var cnt=0;   
-// 	values.forEach(function(val){cnt+=val.count;});  
-// 	return {"count":cnt};
+//  var cnt=0;   
+// values.forEach(function(val){ cnt+=val.count;});  
+// return {"count":cnt};
 // }
-
+// //MR结果存到集合mr1
 // qb.superbond.mapReduce(map,reduce,{out:"mr2"});
 
 
-
-//MapReduce实现
-map=function (){
- emit(this.account,{count:1})
-}
-
-reduce=function (key,values){
- var cnt=0;   
-values.forEach(function(val){ cnt+=val.count;});  
-return {"count":cnt};
-}
-//MR结果存到集合mr1
-qb.superbond.mapReduce(map,reduce,{out:"mr2"});
-
-
-qb.mr2.find(function(error, result){
-		    if (error) {
-		      res.send(error);
-		    }else{
-			// result = JSON.stringify(result);
-		  res.render('tongji', {
-			  	pagetitle: 'aaa',
-		        status: 1,
-		        datalist : result,
-		        date : new Date()
-		      });
-		}
-	});
+// qb.mr2.find(function(error, result){
+// 		    if (error) {
+// 		      res.send(error);
+// 		    }else{
+// 			// result = JSON.stringify(result);
+// 		  res.render('tongji', {
+// 			  	pagetitle: 'aaa',
+// 		        status: 1,
+// 		        datalist : result,
+// 		        date : new Date()
+// 		      });
+// 		}
+// 	});
 
 		// qb.superbond.find(function(error, result){
 		//     if (error) {
@@ -179,7 +179,47 @@ qb.mr2.find(function(error, result){
 		//   });
 
 
+		      res.render('tongji', {
+			  	pagetitle: 'aaa',
+		        status: 0,
+		      });
+
+
+
 	});
+
+
+	app.post('/tj_search', function(req, res, next) {
+		var search_field = req.body.search_field;
+		var search_text = req.body.search_text;
+		var re = eval("/" + search_text + "/");
+		var query = {search_field: re};
+		qb.superbond.count(query, function(err, doc){ 
+		if (doc!=0) {
+		  qb.superbond.find(query, function(error, result){
+		    if (error) {
+		      res.send(error);
+		    }else{
+		      res.render('tongji', {
+			  	pagetitle: 'bbb',		      	
+		        status: doc,
+		        search_text : query.search_text,
+		        datalist : result,
+		        date : new Date()
+		      });
+		    }
+		  });
+		}else{
+		  res.render('tongji', {
+			pagetitle: 'ccc',		      	
+	        search_text : JSON.stringify(query),
+		    status: doc,
+		  });
+		  //res.redirect('/');
+		}
+		});
+	});
+
 
 
 	app.get('/login', function(req, res, next) {

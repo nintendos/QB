@@ -12,7 +12,7 @@ db.createCollection('user')
 
 mongoimport -d qb -c superbond --type csv --headerline --file D:\MongoDB\superbond.csv
 ./mongoimport -d qb -c superbonds --type csv --headerline --file /Users/jiangli/Documents/Project/QB/db/superbond.csv
-
+mongoimport -d qb -c superbonds --type csv --headerline --file F:\Project\QB\db\superbond.csv
 
 use <db name>：切换当前数据库，这和MS-SQL里面的意思一样
 db.help()：显示数据库操作命令，里面有很多的命令

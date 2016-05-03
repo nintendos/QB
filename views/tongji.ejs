@@ -9,11 +9,37 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <h1>超级新债通</h1>
-  <%= datalist.length %>  
 
+<div>
+	<form class="span12" action="/tj_search" method="post">
+		<fieldset>
+			<legend>请输入</legend>
+				<span>
+					<select name="search_field" id="search_field" class="form-control">
+			            <option value="event_id">event_id</option>
+			            <option value="account" selected="selected">account</option>
+			            <option value="time">time</option>
+			            <option value="time_next">time_next</option>
+			            <option value="event_key">event_key</option>
+			            <option value="event_value">event_value</option>
+			            <option value="MainWindow">MainWindow</option>
+			            <option value="time_stay">time_stay</option>
+			            <option value="func">func</option>
+			            <option value="func_last">func_last</option>
+			            <option value="cp">cp</option>
+			            <option value="cp_type">cp_type</option>
+			            <option value="city">city</option>
+					</select>
+				</span>
+				<input id="search_text" name="search_text" type="text" class="form-control">
+			<input type="submit" value="查询" class="btn btn-default">
+		</fieldset>
+	</form>		
+</div>
 
   <% if (status) { %>  
     <h3>数据列表</h3>
+      <%= search_text %> 共计：<%= datalist.length %>  
     <% if (datalist.length) { %>  
       <table class="table">
         <thead>
@@ -55,6 +81,7 @@
       </table>
     <% } %>  
   <% } else {%>
+  <%= search_text %>
     <strong>无数据</strong>
   <% } %>  
 
