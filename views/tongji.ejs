@@ -1,102 +1,111 @@
-<% include top %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title><%= pagetitle %></title>
+<script src="js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+
+<style>
+body{font-family:"Arial","Microsoft Yahei";background:#fff;color:#111;-webkit-user-select:none;}
+a:link, a:visited{color:#352578;outline: none;}
+a:hover, a:active{color:#363367;outline: none;}
+.clearfix:before,.clearfix:after{display: table;content: " ";}
+.clearfix:after{clear: both;}
+
+ul{padding: 0;list-style: none}
+.filter_product_list li{width:auto;height:20px;line-height:20px;font-size:12px;float: left;margin: 10px;background: #eee;border-radius: 3px;padding: 5px}
+.summary_list li{width:260px;height:30px;line-height:30px;font-size:12px;float: left;margin: 10px;background: #eee;border-radius: 3px;padding: 5px}
+.summary_list li span{font-size:24px;color: #00BEB3;float: right}
+</style>
 
 
-    <div class="panel panel-default draggable">
-      <div class="panel-body">
+</head>
 
-
-
-<div class="container-fluid">
-  <div class="row-fluid">
-    <h1>超级新债通</h1>
-
+<body>
+    <h1><%= pagetitle %></h1>
 <div>
-	<form class="span12" action="/tj_search" method="post">
-		<fieldset>
-			<legend>请输入</legend>
-				<span>
-					<select name="search_field" id="search_field" class="form-control">
-			            <option value="event_id">event_id</option>
-			            <option value="account" selected="selected">account</option>
-			            <option value="time">time</option>
-			            <option value="time_next">time_next</option>
-			            <option value="event_key">event_key</option>
-			            <option value="event_value">event_value</option>
-			            <option value="MainWindow">MainWindow</option>
-			            <option value="time_stay">time_stay</option>
-			            <option value="func">func</option>
-			            <option value="func_last">func_last</option>
-			            <option value="cp">cp</option>
-			            <option value="cp_type">cp_type</option>
-			            <option value="city">city</option>
-					</select>
-				</span>
-				<input id="search_text" name="search_text" type="text" class="form-control">
-			<input type="submit" value="查询" class="btn btn-default">
-		</fieldset>
-	</form>		
+  <form class="span12" action="/tj_search_result" method="post">
+    <fieldset>
+      <legend>请输入</legend>
+        <span>
+          <select name="search_field" id="search_field" class="form-control">
+                  <option value="event_id">event_id</option>
+                  <option value="account" selected="selected">account</option>
+                  <option value="time">time</option>
+                  <option value="time_next">time_next</option>
+                  <option value="event_key">event_key</option>
+                  <option value="event_value">event_value</option>
+                  <option value="MainWindow">MainWindow</option>
+                  <option value="time_stay">time_stay</option>
+                  <option value="func">func</option>
+                  <option value="func_last">func_last</option>
+                  <option value="cp">cp</option>
+                  <option value="cp_type">cp_type</option>
+                  <option value="city">city</option>
+          </select>
+        </span>
+        <input id="search_text" name="search_text" type="text" class="form-control">
+      <input type="submit" value="查询" class="btn btn-default">
+    </fieldset>
+  </form>   
 </div>
 
   <% if (status) { %>  
-    <h3>数据列表</h3>
-      <%= search_text %> 共计：<%= datalist.length %>  
-    <% if (datalist.length) { %>  
-      <table class="table">
-        <thead>
-        <tr>
-            <td>event_id</td>
-            <td>account</td>
-            <td>time</td>
-            <td>time_next</td>
-            <td>event_key</td>
-            <td>event_value</td>
-            <td>MainWindow</td>
-            <td>time_stay</td>
-            <td>func</td>
-            <td>func_last</td>
-            <td>cp</td>
-            <td>cp_type</td>
-            <td>city</td>
-        </tr>
-        </thead>
-        <tbody>
-        <% datalist.forEach(function(data){ %>
-          <tr>
-            <td><%= data.event_id %></td>
-            <td><%= data.account %></td>
-            <td><%= data.time %></td>
-            <td><%= data.time_next %></td>
-            <td><%= data.event_key %></td>
-            <td><%= data.event_value %></td>
-            <td><%= data.MainWindow %></td>
-            <td><%= data.time_stay %></td>
-            <td><%= data.func %></td>
-            <td><%= data.func_last %></td>
-            <td><%= data.cp %></td>
-            <td><%= data.cp_type %></td>
-            <td><%= data.city %></td>
-          </tr>
+      <% if (datalist.length) { %>  
+
+        <% datalist.forEach(function(data){ %>    
+        <div class="filter_product_list">
+          <ul>
+            <li><a href=""><%= data._id.event_value %></a></li>
+          </ul>
+        </div>
         <% }) %>  
-        </tbody>
-      </table>
-    <% } %>  
-  <% } else {%>
-  <%= search_text %>
-    <strong>无数据</strong>
+      <div class="clearfix"></div>
+
+      <% if (status === "summary") { %>  
+        <h3>概览</h3>
+            <% datalist.forEach(function(data){ %>
+            <div class="summary_list">
+              <ul>
+                <li><%= data._id.event_key %>:<span><%= data.count %></span></li>
+              </ul>  
+            </div>
+            <% }) %>  
+
+      <%} else if (status === "product_type") { %>  
+        <h3>筛选</h3>
+            <% datalist.forEach(function(data){ %>
+            <div class="summary_list">
+              <ul>
+                <li><%= data._id.event_value %>:<span><%= data.count %></span></li>
+              </ul>  
+            </div>
+          <% }) %>  
+
+      <%} else if (status === "cp_type") { %>  
+        <h3>筛选</h3>
+            <% datalist.forEach(function(data){ %>
+            <div class="summary_list">
+              <ul>
+                <li><%= data._id.cp_type %>:<span><%= data.count %></span></li>
+              </ul>  
+            </div>
+          <% }) %>  
+
+      <% } else {%>
+        <%= search_text %><strong>无数据</strong>&nbsp;<a href="/tongji">返回</a>
+      <% } %>  
+
+      <div class="clearfix"></div>
+
+      <%= search_text %> 共计：<%= datalist.length %> <br/>
+      <div style="border:1px solid #eee;padding:10px;clear:both;">
+       <%= JSON.stringify(datalist) %>
+      </div>
+
   <% } %>  
+<% } %>  
 
 
-
-  </div>
-</div>
-
-
-
-      </div>
-      </div>
-
-        
-
-<% include footer %>
-<% include bottom %>
-
+</body>
+</html>

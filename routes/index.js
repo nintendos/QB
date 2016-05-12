@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var http = require('http');
+var Q = require('q.js');
 var qb = require('./db/qb_schema.js');
 
 // var ipc = require('ipc');
@@ -165,43 +166,130 @@ module.exports = function(app){
 // 		}
 // 	});
 
-		// qb.superbond.find(function(error, result){
+		// qb.superbond.distinct("account",function(error, result){
 		//     if (error) {
 		//       res.send(error);
 		//     }else{
 		//       res.render('tongji', {
-		// 	  	pagetitle: 'aaa',
+		// 	  	pagetitle: '统计概览',
 		//         status: 1,
+		//         search_text : "全部",
 		//         datalist : result,
 		//         date : new Date()
 		//       });
 		//     }
 		//   });
 
+var s = req.query.s;
+switch (s) 
+{
+case "summary":
+	qb.superbond.aggregate( 
+		{$project: {event_key:1,event_value:1,_id:0,account:1,cp:1}}, 
+		{$unwind: '$event_value'}, 
+		{$group: {  
+			_id: {event_key: '$event_key'}, 
+			event_value: {$push: '$event_value'},
+			uniqueIds: {$addToSet: '$_id'},
+			count: {$sum: 1}
+			}
+	}, function(error,reply){ 
+			res.render('tongji', {
+				pagetitle: '超级新债通数据分析',
+				status: s,
+				search_text: "",
+				datalist: reply
 
-		      res.render('tongji', {
-			  	pagetitle: 'aaa',
-		        status: 0,
-		      });
+			});
+	});
+break;
+
+case "product_type":
+		//条件筛选
+		qb.superbond.aggregate( 
+			{$match: {event_key: 'QB.SuperBond.ProductType'}}, 
+			{$project: {event_key:1,event_value:1,_id: 0,account:1,cp:1}}, 
+			{$group: {  
+				_id: {event_value: '$event_value'}, 
+				event_value: {$push: '$event_value'},
+				uniqueIds: {$addToSet: '$_id'},
+				count: {$sum: 1}
+				}
+		}, function(error,reply){ 
+				res.render('tongji', {
+					pagetitle: '超级新债通数据分析',
+					status: s,
+					search_text: "",
+					datalist: reply
+
+				});
+		});
+break;
+
+case "cp_type":
+		//条件筛选
+		qb.superbond.aggregate( 
+			{$project: {_id: 0,account:1,cp:1,cp_type:1}}, 
+			{$group: {  
+				_id: {cp_type: '$cp_type'}, 
+				cp_type: {$push: '$cp_type'},
+				uniqueIds: {$addToSet: '$_id'},
+				count: {$sum: 1}
+				}
+		}, function(error,reply){ 
+				res.render('tongji', {
+					pagetitle: '超级新债通数据分析',
+					status: s,
+					search_text: "",
+					datalist: reply
+
+				});
+		});
+break;
+
+}
+
+
+
+		// // var deferred = Q.defer();
+		// var group = { account: "$account", event_key: "$event_key"};		
+		// qb.superbond.aggregate().group({
+		// 	_id: group,
+		// 	uniqueIds: {$addToSet: '$_id'},
+		// 	count: {$sum: 1}
+		// 	}).match({ count: {$gt: 1}})//.exec(deferred.makeNodeResolver());
+		// // return deferred.promise;
+
+
+
+
+
+		    //   res.render('tongji', {
+			  	// pagetitle: 'aaa',
+		    //     status: 0,
+		    //     search_text : "待选",
+
+		    //   });
 
 
 
 	});
 
 
-	app.post('/tj_search', function(req, res, next) {
+
+	app.post('/tj_search_result', function(req, res, next){
 		var search_field = req.body.search_field;
 		var search_text = req.body.search_text;
-		var re = eval("/" + search_text + "/");
-		var query = {search_field: re};
+		//JSON使用变量key 
+		var query = eval ("(" + "{\"" + search_field + "\": {$regex:search_text}}" + ")");
 		qb.superbond.count(query, function(err, doc){ 
 		if (doc!=0) {
 		  qb.superbond.find(query, function(error, result){
 		    if (error) {
 		      res.send(error);
 		    }else{
-		      res.render('tongji', {
-			  	pagetitle: 'bbb',		      	
+		      res.render('tj_search_result', {
+			  	pagetitle: '搜索结果',		      	
 		        status: doc,
 		        search_text : query.search_text,
 		        datalist : result,
@@ -210,9 +298,9 @@ module.exports = function(app){
 		    }
 		  });
 		}else{
-		  res.render('tongji', {
+		  res.render('tj_search_result', {
 			pagetitle: 'ccc',		      	
-	        search_text : JSON.stringify(query),
+	        search_text : JSON.stringify(search_text),
 		    status: doc,
 		  });
 		  //res.redirect('/');

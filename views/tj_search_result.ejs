@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title><%= pagetitle %></title>
+<script src="js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+
+
+
+
+</head>
+
+<body>
+    <h1><%= pagetitle %></h1>
+
+
+
+  <% if (status) { %>  
+    <h3>数据列表</h3>
+      <%= search_text %> 共计：<%= datalist.length %>  &nbsp;<a href="/tongji">返回</a>
+
+    <% if (datalist.length) { %>  
+      <table class="table">
+        <thead>
+        <tr>
+            <td>event_id</td>
+            <td>account</td>
+            <td>time</td>
+            <td>time_next</td>
+            <td>event_key</td>
+            <td>event_value</td>
+            <td>MainWindow</td>
+            <td>time_stay</td>
+            <td>func</td>
+            <td>func_last</td>
+            <td>cp</td>
+            <td>cp_type</td>
+            <td>city</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% datalist.forEach(function(data){ %>
+
+          <tr>
+            <td><%= data.event_id %></td>
+            <td><%= data.account %></td>
+            <td><%= data.time %></td>
+            <td><%= data.time_next %></td>
+            <td><%= data.event_key %></td>
+            <td><%= data.event_value %></td>
+            <td><%= data.MainWindow %></td>
+            <td><%= data.time_stay %></td>
+            <td><%= data.func %></td>
+            <td><%= data.func_last %></td>
+            <td><%= data.cp %></td>
+            <td><%= data.cp_type %></td>
+            <td><%= data.city %></td>
+          </tr>
+        <% }) %>  
+        </tbody>
+      </table>
+
+
+
+
+    <% } %>  
+  <% } else {%>
+    <%= search_text %><strong>无数据</strong>&nbsp;<a href="/tongji">返回</a>
+  <% } %>  
+
+
+
+</body>
+</html>
