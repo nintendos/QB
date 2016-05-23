@@ -1,0 +1,8 @@
+.biPageWrap{padding-left: 140px;}
+.biSideBar{width:130px;float: left;background: #fff;margin-left: -140px;}
+.biSideBar ul li{margin:10px;}
+.biContentWrap{width:100%;float: left;background: #fff}
+
+.filter_product_list li{width:auto;height:20px;line-height:20px;font-size:12px;float: left;margin: 10px;background: #eee;border-radius: 3px;padding: 5px}
+.summary_list li{width:260px;height:30px;line-height:30px;font-size:12px;float: left;margin: 10px;background: #eee;border-radius: 3px;padding: 5px}
+.summary_list li span{font-size:24px;color: #00BEB3;float: right}

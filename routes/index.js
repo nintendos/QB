@@ -188,8 +188,8 @@ case "summary":
 		{$project: {event_key:1,event_value:1,_id:0,account:1,cp:1}}, 
 		{$unwind: '$event_value'}, 
 		{$group: {  
-			_id: {event_key: '$event_key'}, 
-			event_value: {$push: '$event_value'},
+			_id: {a: '$event_key'}, 
+			b: {$push: '$event_value'},
 			uniqueIds: {$addToSet: '$_id'},
 			count: {$sum: 1}
 			}
@@ -210,8 +210,8 @@ case "product_type":
 			{$match: {event_key: 'QB.SuperBond.ProductType'}}, 
 			{$project: {event_key:1,event_value:1,_id: 0,account:1,cp:1}}, 
 			{$group: {  
-				_id: {event_value: '$event_value'}, 
-				event_value: {$push: '$event_value'},
+				_id: {a: '$event_value'}, 
+				a: {$push: '$event_value'},
 				uniqueIds: {$addToSet: '$_id'},
 				count: {$sum: 1}
 				}
@@ -231,8 +231,8 @@ case "cp_type":
 		qb.superbond.aggregate( 
 			{$project: {_id: 0,account:1,cp:1,cp_type:1}}, 
 			{$group: {  
-				_id: {cp_type: '$cp_type'}, 
-				cp_type: {$push: '$cp_type'},
+				_id: {a: '$cp_type'}, 
+				a: {$push: '$cp_type'},
 				uniqueIds: {$addToSet: '$_id'},
 				count: {$sum: 1}
 				}
@@ -246,6 +246,27 @@ case "cp_type":
 				});
 		});
 break;
+
+case "city":
+		//条件筛选
+		qb.superbond.aggregate( 
+			{$project: {city:1}}, 
+			{$group: {  
+				_id: {name: '$city'}, 
+				// a: {$push: '$city'}, //列出所有city值
+				value: {$sum: 1}
+				}
+		}, function(error,reply){ 
+				res.render('tongji', {
+					pagetitle: '超级新债通数据分析',
+					status: s,
+					search_text: "",
+					datalist: reply
+
+				});
+		});
+break;
+
 
 }
 

@@ -56,6 +56,13 @@ $("#skin-switch").click(function(){
 	resizeCanvas();
 	$(window).resize(function(){resizeCanvas();});
 
+
+	$(".searchNav input").focus(function(){
+		$(".qMenu").show();
+	}).blur(function(){
+		$(".qMenu").hide();
+	})
+
 	//Main Nav Dropdown
 	// alert($(".mainNav").offset().left);
 	if($(".mainNav .dropdown-menu").length){

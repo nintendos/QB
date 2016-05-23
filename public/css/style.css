@@ -119,10 +119,18 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 .windowControl > li > a > i{font-size: 13px}
 
 .searchNav{margin-top:8px;width: 300px}
-.avatar{width:30px;height:30px;border-radius: 50%}
+.avatar img{width:30px;height:30px;border-radius: 50%}
 .notiMenu.close{opacity: 1;font-size: 12px}
 .notiMenu .dropdown-toggle i{font-size: 18px; color:#ffebc8;}
 .notiMenu .label{background: #E10057;border-radius:10px;font-weight:400;top: 10px;position: absolute;}
+
+
+/*Q Menu*/
+.qMenu{padding-left: 140px;position:absolute;top:30px;left:70px;z-index:999;width:600px;height:400px;background:#203E3E;border:1px solid #305E6E}
+.qMenuCoreList{width:130px;height:400px;float: left;background: #153030;margin-left: -140px;}
+.qMenuCoreList ul li{margin:10px;}
+.qMenuChildList{width:100%;float: left;}
+
 
 /*Tab Bar*/
 #tabbar{background: #0e2424;border-bottom: 2px solid #FF900D;margin-bottom:1px;padding-left: 10px}
