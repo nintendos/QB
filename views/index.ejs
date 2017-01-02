@@ -2,14 +2,14 @@
 <% include header %>
 <% include nav %>
 
-
+<button class="loadingAnimation">start</button>
 
 <!--////////////Main Content/////////////-->
 
 <div class="row mainContent">
+
   <!--Left Content-->
   <div class="col-xs-12 col-sm-6 col-md-7 leftColumn">
-
 
   <!---->
       <div class="panel panel-default">
@@ -321,5 +321,30 @@
 });
 </script>
 
+
+
+
 <% include footer %>
 <% include bottom %>
+
+<script>
+  $(function() {
+    $(".loadingAnimation").on('click', function(e) {
+        var pw = $(window).width();
+        var ph = $(window).height();      
+        $("#loadingAnimation").css({"top":ph/2-80+"px","left":pw/2-60+"px"});
+        $("#loadingAnimation").show().delay(2000).fadeOut (); 
+    })
+});
+</script>
+
+<div id="loadingAnimation" style="display:none">
+  <div class="wrap">
+    <span class="item-1"></span>
+    <span class="item-2"></span>
+    <span class="item-3"></span>
+    <span class="item-4"></span>
+    <span class="item-5"></span>
+  </div>
+  <div class="text">正在加载...</div>
+</div>

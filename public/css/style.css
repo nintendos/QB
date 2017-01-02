@@ -35,6 +35,8 @@ ul{padding: 0;list-style: none}
 .icon-more:before{content:"\EA10";}
 table .iconfont{font-size: 18px;vertical-align:sub;margin:0 2px;top:0;}
 
+
+
 svg.labelIcon{fill: #111;background: #eee;border-radius: 2px;padding: 3px}
 /*svg.labelIcon symbol#icon-pen path.path1{fill: red}
 /*.glyphicon {
@@ -276,3 +278,4 @@ header .nav-pills > li.active > a,header .nav-pills > li.active > a:focus,header
 
 /*Footer*/
 footer{width:100%;height:30px;line-height:30px;background: #0e2424;position: fixed;bottom: 0}
+

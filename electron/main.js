@@ -1,11 +1,15 @@
 var express = require('express');
 var qm = require('./qm.js');
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
+// var app = require('app');  // Module to control application life.
+// var BrowserWindow = require('browser-window');  // Module to create native browser window.
+
+const electron = require('electron');
+const {app} = electron;
+const {BrowserWindow} = electron;
 
 
-// Report crashes to our server.
-require('crash-reporter').start();
+// // Report crashes to our server.
+// require('crash-reporter').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is GCed.
@@ -48,7 +52,7 @@ app.on('ready', function() {
   });
 
 
-var webContents = mainWindow.webContents;
+var webContents = BrowserWindow.getFocusedWindow().webContents;
 var win;
 webContents.on("did-get-response-details", function(event,status,headers) {
 
@@ -59,12 +63,13 @@ webContents.on("did-get-response-details", function(event,status,headers) {
     var s = h.substring(i + 1);
     // var h = httpResponseCode;
     if (s == 'close'){
-      app.quit();
+      BrowserWindow.getFocusedWindow().close();
+      // app.quit();
     }
     else {
         // app.quit();
       win = new BrowserWindow({
-        width: 800, 
+        width: 800,
         height: 600,
         title: s,
         frame:false,

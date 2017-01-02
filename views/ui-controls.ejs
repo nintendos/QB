@@ -133,28 +133,53 @@
           <h2 class="panel-title">标题栏</h2>
           <div class="panel-body">
             
-<div class="contactCard">
-  <div class="avatar"><a href="#"><img src="img/avatar.png" alt=""></a></div>
-  <div class="username">李小明</div>
-  <div class="company">申万宏源</div>
-</div>
-<div class="cpCard">
-  <div class="avatar"><a href="#"><img src="img/avatar.png" alt=""></a></div>
-  <div class="cpname">申万宏源</div>
-  <div class="city">上海</div>
-</div>
-<div class="clearfix"></div>
-<div class="bondCard">
-  <div class="cr">C</div>
-  <div class="issue">160010</div>
-  <div class="shortName">16国开10</div>
-</div>
+          <div class="contactCard">
+            <div class="avatar"><a href="#"><img src="img/avatar.png" alt=""></a></div>
+            <div class="username">李小明</div>
+            <div class="company">申万宏源</div>
+          </div>
+          <div class="cpCard">
+            <div class="avatar"><a href="#"><img src="img/avatar.png" alt=""></a></div>
+            <div class="cpname">申万宏源</div>
+            <div class="city">上海</div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="bondCard">
+            <div class="cr">C</div>
+            <div class="issue">160010</div>
+            <div class="shortName">16国开10</div>
+          </div>
 
+  <script>
+function setup() {
+  createCanvas(200, 100);
+}
 
+function draw() {
+  background(102);
+  
+  push();
+  translate(width*0.5, height*0.5);
+  rotate(frameCount / 50.0);
+  polygon(0, 0, 80, 20); 
+  pop();
+  
+}
+
+function polygon(x, y, radius, npoints) {
+  var angle = TWO_PI / npoints;
+  beginShape();
+  for (var a = 0; a < TWO_PI; a += angle) {
+    var sx = x + cos(a) * radius;
+    var sy = y + sin(a) * radius;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
+  </script>
 
           </div>
         </div>
-
 
   </div>
   <!--Right Side Column End-->
@@ -162,6 +187,52 @@
 
 </div>
 
+
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+       
+<div class="form">
+  <dl>
+    <dt>代码：</dt>
+    <dd>
+                <div class="checkbox">
+                    <label>
+                      <input type="checkbox">有效报价
+                    </label>
+                </div>   
+    </dd>
+    <dt>简称：</dt>
+    <dd><input type="text" class="form-control" /></dd>
+  </dl>
+  
+  <div class="input-group">
+  <span class="input-group-addon">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-addon">.00</span>
+</div>
+
+
+  <div>
+    <button class="btn btn-default">确定</button>
+    <button class="btn btn-default">取消</button>  
+  </div>
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 <% include bottom %>
