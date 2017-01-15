@@ -43,24 +43,36 @@ $("#skin-switch").click(function(){
 	//Resize Canvas
 	function resizeCanvas()
 	{
-		// var pw = $(window).width();
-		// var ph = $(window).height();
+		var pw = $(window).width();
+		var ph = $(window).height();
 		// var sw = $("#sideBar").width();
 		var qmh = $(".qeuMessenger>.panel-body").height();
 
 		// $("#content").css("width",pw);
 		// $("#content").css("height",ph);
-		// $("#sideBar").css("height",ph);
+		$(".qMenu,.qMenuCoreList").css("height",ph-40);
 		$(".qmContactList").css("height",qmh)
 	}
 	resizeCanvas();
 	$(window).resize(function(){resizeCanvas();});
 
+	//Logo点击显示主菜单
+    $('.logo').click(function (event) {  
+        event.stopPropagation();  
+          $('.qMenu').toggle();  
+    });  
+    // $('.logo').click(function (event) {  
+    //     event.stopPropagation();  
+    //     $('#dl_iphone').hide();
+    //       $('#dl_android').toggle();  
+    // });  
+    $(document).click(function (event) { $('.qMenu').fadeOut(200); });  
 
+    //主搜索框    
 	$(".searchNav input").focus(function(){
-		$(".qMenu").show();
+		$(".qSearch").show();
 	}).blur(function(){
-		$(".qMenu").hide();
+		$(".qSearch").hide();
 	})
 
 	//Main Nav Dropdown

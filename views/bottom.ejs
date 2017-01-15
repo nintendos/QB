@@ -1,5 +1,5 @@
 </div>
-
+<!--Main Menu-->
 <div class="qMenu" style="display:none">
   <div class="qMenuCoreList">
     <ul>
@@ -8,7 +8,7 @@
       <li><a href="">新闻资讯</a></li>
       <li><a href="">分析统计</a></li>
       <li><a href="">银河间社区</a></li>
-      <li><a href="" class="iconfont icon-appcenter">应用中心</a></li>
+      <li class="appCenterMenu"><a href="" class="iconfont icon-appcenter">应用中心</a></li>
     </ul>
   </div>
   <div class="qMenuChildList">
@@ -26,6 +26,14 @@
   </div>
 </div>
 
+<!--Main Search-->
+<div class="qSearch" style="display:none">
+  <h3>联系人</h3>
+  <ul>
+  <li><a href="#" class="avatar"><img src="img/avatar.png" alt=""></a>马晓莉</li>
+  <li><a href="#" class="avatar"><img src="img/avatar.png" alt=""></a>马明明</li>
+  </ul>
+</div>
 
 
 
@@ -57,6 +65,7 @@ $(function() {
       drop: function(event, ui) {
         // after the draggable is droped, hides it with a hide() effect
         // ui.draggable.hide(100);
+        $(this).parent(".navWidget").append(ui.draggable.clone());
         $(this).siblings(".qmDialogList").append(ui.draggable.clone());
       }
     });
